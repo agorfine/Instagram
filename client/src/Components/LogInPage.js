@@ -60,9 +60,6 @@ export default class LogInPage extends Component {
           </label>
           <input type="submit" value="Submit!" />
         </form>
-        {this.state.fireRedirect
-          ? <Redirect push to={`/ice-cream/${this.state.newId}`} />
-          : ''}
       </div>
     )
   }
