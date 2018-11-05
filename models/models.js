@@ -11,12 +11,12 @@ Model.findAll = () => {
 }
 
 //newsfeed after login
-Model.findNewsfeed = () => {
+Model.findUser = (username) => {
   return db.query(`
     SELECT *
-    FROM pictures
-    ORDER BY id DESC
-  `)
+    FROM users
+    WHERE username = $1
+  `, username)
 }
 
 Model.findById = id => {

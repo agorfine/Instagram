@@ -13,15 +13,24 @@ controller.index = (req, res) => {
     });
 }
 
-controller.index = (req, res) => {
-  Model.findNewsfeed()
+controller.user = async (req, res) => {
+    const user = await Model.findUser(req.body.username)
     .then(obj => {
-      res.json({
-        message:'ok',
-        data: obj,
-      });
+      let data;
+      console.log(obj)
+      if(obj.length === 0){
+        data = { data: 'no user' }
+      }
+      if (req.body.password === obj[0].password){
+        data = { data: 'good pass' }
+      } else {
+        data = { data: 'bad pass' }
+      }
+      res.json(data);
+
     }).catch(err => {
-      res.status(500).json({err});
+      console.log(err);
+      res.end()
     });
 }
 
