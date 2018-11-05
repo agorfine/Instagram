@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
+
+import LogInPage from './components/LogInPage';
+import NewAccount from './components/NewAccount';
+import NewsFeed from './components/NewsFeed';
+import AddPhoto from './components/AddPhoto';
+import Explore from './components/ExplorePage';
+import ProfilePage from './components/ProfilePage'
+import Comments from './components/Comments'
+
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Switch>
+          <Route path='/CreateAccount' component= { NewAccount } />
+          <Route path='/Newsfeed' component= { NewsFeed } />
+          <Route path='/AddPhoto' component= { AddPhoto } />
+          <Route path='/Explore' component= { Explore } />
+          <Route path='/ProfilePage' component = { ProfilePage } />
+          <Route path='/Comments' component = { Comments } />
+          <Route path='/' component= { LogInPage } />
+
+          <Redirect to='/' />
+        </Switch>
       </div>
     );
   }
