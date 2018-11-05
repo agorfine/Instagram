@@ -4,17 +4,17 @@ import { Redirect } from 'react-router-dom'
 
 export default class LogInPage extends Component {
   state = {
-    name: '',
+    username: '',
     password:''
   }
 
   // this handles onChange ev
   handleInputChange(e){
     console.log(e.target.value)
-    const name = e.target.name
+    const username = e.target.username
     const value = e.target.value
     this.setState(prevState => ({
-      [name]:value
+      [username]:value
     }))
   }
 
@@ -23,11 +23,10 @@ export default class LogInPage extends Component {
     // stop form from refreshing the page
     e.preventDefault()
     axios.post('/users',  {
-        username: this.state.flavor,
-       password: this.state.desc,
-        rating:this.state.rating,
-        brand:this.state.brand,
-        url:this.state.url,
+        username: this.state.username,
+        password: this.state.desc,
+        phonenumber:this.state.phonenumber,
+        name:this.state.name,
     }).then(res => {
       this.setState({
         newId: res.data.data.id,
@@ -41,59 +40,49 @@ export default class LogInPage extends Component {
     <div className="add">
         <form onSubmit={(e) => this.handleFormSubmit(e)}>
           <label>
-            Flavor
+            User Name
             <input
               type="text"
               placeholder="User Name"
-              name="flavor"
-              value={this.state.flavor}
+              name="username"
+              value={this.state.username}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <label>
-            Description
+            Password
             <input
               type="text"
               placeholder="Password"
               name="desc"
-              value={this.state.desc}
+              value={this.state.password}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <label>
-            Rating
+            Phone Number
             <input
               type="number"
-              placeholder="Rating"
-              name="rating"
-              value={this.state.description}
+              placeholder="Phone Number"
+              name="phonenumber"
+              value={this.state.phonenumber}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <label>
-            Brand
+            Name
             <input
               type="text"
-              placeholder="Brand"
-              name="brand"
-              value={this.state.brand}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-          </label>
-          <label>
-            URL
-            <input
-              type="text"
-              placeholder="URL"
-              name="url"
-              value={this.state.url}
+              placeholder="Name"
+              name="name"
+              value={this.state.name}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <input type="submit" value="Submit!" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={`/ice-cream/${this.state.newId}`} />
+          ? <Redirect push to={`/`} />
           : ''}
       </div>
     )
