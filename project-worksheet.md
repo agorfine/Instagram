@@ -1,19 +1,22 @@
 # Project Overview
 
+## Project Links
+[Project Repo](https://git.generalassemb.ly/agorfine/Project3-Instagram)
+
 ## Project Schedule
 
 This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-|  Day | Due Date |Deliverable | Status
-|---|---| ---| ---|
+|  Day | Due Date | Deliverable | Status
+|:---:|---|---|:---:|
 |Day 1| Nov 5 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | In Progress
 |Day 2| Nov 6 | Basic Functionality: Database, Login to newsfeed, Nav, Footer | Incomplete
 |Day 3| Nov 7 | Newfeed functionality: Render photos, Add photos, Comment, Like | Incomplete
 |Day 4| Nov 8 | Explore Page, Profile Page | Incomplete
 |Day 5| Nov 9 | CSS, Problem Sovling, Possibly Post-MVP  | Incomplete
-|Day 6| Nov 12 | Final Touches | Incomplete
+|Day 6| Nov 12 | Final Touches, Presentation Prep | Incomplete
 |Day 7| Nov 13 | Present | Incomplete
 
 
@@ -68,29 +71,28 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Language translator
 
 
-## React Architectural Design
+## Architectural Design
 
 Define the the React components and the architectural design of your app.
 
 [React Architectural Design](https://imgur.com/znJfojK "React Architectural Design")
 
-## Functional Components
+[ERD](https://imgur.com/cWg8TTC)
+
+### Functional Components
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
 | Component | Description | 
-| --- | :---: |  
+| --- | --- |  
 | App | This will render the UI | 
 | Switcher | will handle all the routes | 
-| log-in page | log in for existing users | 
-| create account | create new user account |
-| newsfeed | scrolling list of photos | 
+| Log-in Page | log in for existing users | 
+| Create Account | create new user account |
+| Newsfeed | scrolling list of photos | 
 | Nav | includes two icons | 
 | Footer | add photo button, profile button, newsfeed button | 
-| newsfeed | scrolling list of photos | 
-| add photo form | scrolling list of photos | 
-| newsfeed | scrolling list of photos | 
-| newsfeed | scrolling list of photos | 
+| Add photo form | Add a photo and give it a caption | 
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
@@ -114,11 +116,12 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | | L | ∞hrs | hrs | hrs |
 | Total | H | 68hrs| hrs | hrs |
 
+
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
 | Function | Description | 
-| --- | :---: |  
+| --- | --- |  
 | compondentDidMount | Pulling data when page renders | 
 | Capitalize | This will capitalize the first letter in a string of text | 
 
