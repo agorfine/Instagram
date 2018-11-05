@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
   res.send('hello world');
 });
 
-// const icecreamRoutes = require('./routes/icecream-routes');
-// app.use('/icecream', icecreamRoutes);
+const routes = require('./routes/routes');
+app.use('/finsta', routes);
 
 app.use('*', (req, res) => {
   res.status(400).json({
