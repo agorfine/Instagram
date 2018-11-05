@@ -77,7 +77,7 @@ Define the the React components and the architectural design of your app.
 
 [React Architectural Design](https://imgur.com/znJfojK "React Architectural Design")
 
-[ERD](https://imgur.com/cWg8TTC)
+[ERD](https://imgur.com/a/fLTtbNE)
 
 ### Functional Components
 
