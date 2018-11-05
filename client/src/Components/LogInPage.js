@@ -5,7 +5,8 @@ import { Redirect } from 'react-router-dom'
 export default class LogInPage extends Component {
   state = {
     name: '',
-    password:''
+    password:'',
+
   }
 
   // this handles onChange ev
@@ -23,11 +24,8 @@ export default class LogInPage extends Component {
     // stop form from refreshing the page
     e.preventDefault()
     axios.post('/users',  {
-        username: this.state.flavor,
-       password: this.state.desc,
-        rating:this.state.rating,
-        brand:this.state.brand,
-        url:this.state.url,
+       username: this.state.name,
+       password: this.state.password,
     }).then(res => {
       this.setState({
         newId: res.data.data.id,
@@ -41,52 +39,22 @@ export default class LogInPage extends Component {
     <div className="add">
         <form onSubmit={(e) => this.handleFormSubmit(e)}>
           <label>
-            Flavor
+            Username
             <input
               type="text"
               placeholder="User Name"
-              name="flavor"
-              value={this.state.flavor}
+              name="name"
+              value={this.state.name}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <label>
-            Description
+            Password
             <input
               type="text"
               placeholder="Password"
-              name="desc"
-              value={this.state.desc}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-          </label>
-          <label>
-            Rating
-            <input
-              type="number"
-              placeholder="Rating"
-              name="rating"
-              value={this.state.description}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-          </label>
-          <label>
-            Brand
-            <input
-              type="text"
-              placeholder="Brand"
-              name="brand"
-              value={this.state.brand}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-          </label>
-          <label>
-            URL
-            <input
-              type="text"
-              placeholder="URL"
-              name="url"
-              value={this.state.url}
+              name="password"
+              value={this.state.password}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
