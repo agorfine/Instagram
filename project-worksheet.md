@@ -10,7 +10,7 @@ This schedule will be used to keep track of your progress throughout the week an
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Due Date | Deliverable | Status
-|---|---|---|:---:|
+|:---:|---|---|:---:|
 |Day 1| Nov 5 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | In Progress
 |Day 2| Nov 6 | Basic Functionality: Database, Login to newsfeed, Nav, Footer | Incomplete
 |Day 3| Nov 7 | Newfeed functionality: Render photos, Add photos, Comment, Like | Incomplete
