@@ -1,0 +1,10 @@
+\c finstadb;
+
+CREATE TABLE IF NOT EXISTS user (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+   VARCHAR(6),
+   VARCHAR(255),
+  brand VARCHAR(255)
+);
