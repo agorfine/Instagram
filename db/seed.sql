@@ -1,11 +1,26 @@
 \c buildingdb
 
-INSERT INTO buildings VALUES (DEFAULT, 'Flatiron Building', 1902, 'New York City', 'Daniel Burnham', 'Renaissance', 'https://cdn.homedit.com/wp-content/uploads/2015/06/Flatiron-Building-exterior-architecture.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Chrysler Building', 1930, 'New York City', 'William Van Alen', 'Art Deco', 'https://alphacityguides.com/sites/default/files/chrysler_building.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Guggenheim Museum', 1964, 'New York City', 'Frank Lloyd Wright', 'Modern', 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Solomon_R._Guggenheim_Museum_New_York_City.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Johnson Wax Headquarters', 1950, 'Racine', 'Frank Lloyd Wright', 'Modern', 'https://dome.mit.edu/bitstream/handle/1721.3/33080/118073_sv.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Eiffel Tower', 1889, 'Paris', 'Stephen Sauvestre', 'Modern', 'https://media.cntraveler.com/photos/5539216cab60aad20f3f3aaa/master/pass/eiffel-tower-paris-secret-apartment.jpg');
-INSERT INTO buildings VALUES (DEFAULT, '30 St Mary Axe', 2003, 'London', 'Sir Norman Foster', 'Postmodern', 'https://upload.wikimedia.org/wikipedia/commons/1/15/30_St_Mary_Axe_%28Swiss_Re_Building%29_and_St_Andrew_Undershaft_church.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Centre Georges Pompidou', 1977, 'Paris', 'Renzo Piano', 'Postmodern', 'http://media0.trover.com/T/58a587ca74eb4609cd047ccf/fixedw_large_4x.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Cathedral of Brasilia', 1970, 'Brasilia', 'Oscar Niemeyer', 'Modern', 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Brasilia_Cathedral_wide.jpg');
-INSERT INTO buildings VALUES (DEFAULT, 'Sagrada Familia', 2028, 'Barcelona', 'Antoni Gaudi', 'Art Nouveau', 'https://laninga.files.wordpress.com/2016/05/dscf4303.jpg');
+INSERT INTO users VALUES (1, 'rossi', 'password', 'Valentino Rossi', null, null, null);
+INSERT INTO users VALUES (2, 'lilC', 'password', 'Cynthia ', null, null, null);
+INSERT INTO users VALUES (3, 'uhmandur', 'password', 'Amanda', null, null, null);
+
+INSERT INTO pictures VALUES (DEFAULT, 1, '', 'https://res.cloudinary.com/dvjtpejbw/video/upload/v1541448984/EVPoaa6.mp4');
+INSERT INTO pictures VALUES (DEFAULT, 1, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449327/Screenshot_20181105-152129_Instagram.jpg');
+INSERT INTO pictures VALUES (DEFAULT, 1, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449314/Screenshot_20181105-152100_Instagram.jpg');
+INSERT INTO pictures VALUES (DEFAULT, 2, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537200689/crispy-chocolate-chip-cookies.jpg');
+INSERT INTO pictures VALUES (DEFAULT, 2, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449549/Screenshot_20181105-152500_Instagram.jpg');
+INSERT INTO pictures VALUES (DEFAULT, 2, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449655/Snapchat-450742301.jpg');
+INSERT INTO pictures VALUES (DEFAULT, 2, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449794/Screenshot_20181105-152932_Instagram.jpg');
+INSERT INTO pictures VALUES (1, 3, '', 'https://secure.cdn1.wdpromedia.com/resize/mwImage/1/630/354/75/dam/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/move-it-shake-it-dance-play-it-street-party/move-it-shake-it-dance-play-it-00.jpg?1520709311202');
+INSERT INTO pictures VALUES (DEFAULT, 3, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449233/Screenshot_20181105-151934_Instagram.jpg');
+INSERT INTO pictures VALUES (DEFAULT, 3, '', 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449879/Screenshot_20181105-153052_Instagram.jpg');
+
+INSERT INTO comments VALUES (DEFAULT, 1, 1, 'SICKKKKK');
+INSERT INTO comments VALUES (DEFAULT, 1, 2, 'youre the cutest');
+
+INSERT INTO likes VALUES (DEFAULT, 1, 1);
+INSERT INTO likes VALUES (DEFAULT, 1, 2);
+INSERT INTO likes VALUES (DEFAULT, 1, 3);
+
+
+
