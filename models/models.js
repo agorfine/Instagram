@@ -21,11 +21,13 @@ Model.findUser = (username) => {
   `, username)
 }
 
-Model.findById = id => {
+Model.findByUsername = id => {
   return db.oneOrNone(
     `
-    SELECT * FROM pictures
-    WHERE id = $1
+    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username FROM pictures
+    JOIN users
+    ON pictures.user_id = users.id
+    WHERE users.username = $1
   `,
     [id]
   );

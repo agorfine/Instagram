@@ -34,7 +34,7 @@ controller.user = async (req, res) => {
 }
 
 controller.show = (req, res) => {
-  Model.findAll()
+  Model.findByUsername(req.params.id)
     .then(obj => {
       res.json({
         data: obj,
