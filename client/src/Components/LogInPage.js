@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 import '../css/login.css'
 
 export default class LogInPage extends Component {
   state = {
     username: '',
     password:'',
+    availableUser: [],
     fireRedirect:false,
-    availableUser: null
   }
 
 componentDidMount() {
     axios.get('http://localhost:3001/finsta/userauth')
       .then( res => {
-        this.setState(prevState => ({
+          this.setState(prevState => ({
           availableUser: res.data.data
-        }))
-      })
-  }
+            })
+         )
+      console.log(res.data.data)
+    })
+   }
 
   // checkForUser(){
-  //   this.state.availableUser.map((d, i) => {
-  //     if(d.username = this.state.username){
-  //       if(d.password = this.state.password){
-
-  //       }
-  //     }
-  //   })
-  // }
-  // this handles onChange ev
+  //     if(this.state.username == this.state.availableUser){
+  //     alert('route to the newsfeed')
+  //    } else {
+  //     console.log('no match go to create')
+  //    }
+  //   }
 
 
   handleInputChangeUsername(e){
@@ -51,7 +49,6 @@ componentDidMount() {
 
   // the event for a form is...onSubmit
   handleFormSubmit(e){
-    // stop form from refreshing the page
     e.preventDefault()
     axios.post('http://localhost:3001/finsta/userauth',  {
        username: this.state.username,
@@ -60,13 +57,10 @@ componentDidMount() {
       this.setState({
         fireRedirect:true
       })
-
-    console.log(this.state.username)
-    console.log(this.state.password)
-    console.log(this.state.availableUser)
-    console.log(this.state.availablePassword)
     })
+    console.log(this.state.username)
   }
+
 
   render() {
   return(
@@ -94,9 +88,6 @@ componentDidMount() {
           </label>
           <input type="submit" value="Submit!" />
         </form>
-        {this.state.fireRedirect
-          ? <Redirect push to={`/`} />
-          : ''}
       </div>
     )
   }
