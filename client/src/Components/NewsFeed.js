@@ -20,14 +20,8 @@ class NewsFeed extends Component {
           apiData: res.data.data
         }))
       })
-     	axios.get('/finsta/user')
-     	.then( res => {
-        this.setState(prevState => ({
-          apiUserLoaded: true,
-          apiUser: res.data.data
-        }))
-      })
-     	this.targetElement= document.querySelector('scroll')
+     	this.targetElement = document.querySelector('.scroll')
+     	enableBodyScroll(this.targetElement)
 	}
 
 	renderPictures() {
@@ -40,16 +34,11 @@ class NewsFeed extends Component {
 		} else return <p>Loading...</p>
 	}
 
-	enableScroll() {
-		enableBodyScroll(this.targetElement)
-	}
-
 	render(){
 		return (
-			<div className = 'newsFeed'>
+			<div className="newsFeed">
 				<NavBar/>
-				<div>
-					{this.enableScroll()}
+				<div className="scroll">
 					{this.renderPictures()}
 				</div>
 				<Footer/>
