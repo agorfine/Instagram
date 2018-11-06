@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-import '../css/login.css'
+import { Link, Redirect } from 'react-router-dom';
+import '../css/login.css';
 
 export default class LogInPage extends Component {
   state = {
@@ -9,16 +9,8 @@ export default class LogInPage extends Component {
     password:'',
     availableUser: [],
     fireRedirect:false,
+    fireCreateAccount: false
   }
-
-
-  // checkForUser(){
-  //     if(this.state.username == this.state.availableUser){
-  //     alert('route to the newsfeed')
-  //    } else {
-  //     console.log('no match go to create')
-  //    }
-  //   }
 
 
   handleInputChangeUsername(e){
@@ -26,6 +18,7 @@ export default class LogInPage extends Component {
     const value= e.target.value
     this.setState(prevState => ({
         username: value,
+        fireCreateAccount: false
     }))
   }
 
@@ -33,7 +26,8 @@ export default class LogInPage extends Component {
     console.log(e.target.value)
     const value= e.target.value
     this.setState(prevState => ({
-        password: value
+        password: value,
+        fireCreateAccount: false
     }))
   }
 
@@ -48,10 +42,13 @@ export default class LogInPage extends Component {
       if(res.data.data === 'good pass'){
       this.setState({
         fireRedirect:true,
-      })}
+      })} else {
+       this.setState({
+        fireCreateAccount:true,
+      })
+      }
     })
   }
-
 
 
   render() {
@@ -83,6 +80,10 @@ export default class LogInPage extends Component {
         {this.state.fireRedirect
           ? <Redirect push to={`/newsfeed`} />
           : ''}
+          {this.state.fireCreateAccount
+          ? alert('create account please')
+          : ''}
+        <Link to='/CreateAccount'>Create User Account</Link>
       </div>
     )
   }
