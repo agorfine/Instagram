@@ -4,21 +4,7 @@ const Model = {};
 //explore page
 Model.findAll = () => {
   return db.query(`
-    SELECT
-      pictures.id AS picture_id,
-      pictures.user_id AS picture_user,
-      pictures.img_url,
-      pictures.caption,
-      users.username,
-      comments.id AS comment_id,
-      comments.picture_id,
-      comments.user_id,
-      comments.comment
-    FROM pictures
-    FULL JOIN users
-    ON pictures.user_id = users.id
-    FULL JOIN comments
-    ON pictures.id = comments.picture_id
+    SELECT * FROM pictures
     ORDER BY pictures.id DESC
   `)
 }
