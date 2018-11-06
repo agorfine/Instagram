@@ -13,7 +13,7 @@ class NewsFeed extends Component {
 	  }
 
   	componentDidMount() {
-    	axios.get('/finsta/pictures')
+    	axios.get('/newsfeed')
      	.then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
@@ -21,7 +21,7 @@ class NewsFeed extends Component {
         }))
       })
      	this.targetElement = document.querySelector('.scroll')
-     	enableBodyScroll(this.targetElement)
+     	disableBodyScroll(this.targetElement)
 	}
 
 	renderPictures() {
