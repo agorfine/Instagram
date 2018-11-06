@@ -48,12 +48,16 @@ controller.show = (req, res) => {
 
 controller.create = (req, res) => {
   Model.create({
-    name: req.body.name,
-    color: req.body.color
+    username: req.body.username,
+    password: req.body.password,
+    full_name: req.body.full_name,
+    phone: req.body.phone,
+    bio: req.body.bio,
+    profpic: req.body.profpic_url
   })
   .then(obj => {
     res.json({
-      message:'ok',
+      message:'yay new Finsta user!',
       data: obj,
     });
   }).catch(err => {
