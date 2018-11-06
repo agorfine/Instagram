@@ -9,7 +9,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 class NewsFeed extends Component {
 	state = {
 	    apiDataLoaded: false,
-	    apiData: null
+	    apiData: null,
 	  }
 
   	componentDidMount() {
@@ -23,8 +23,8 @@ class NewsFeed extends Component {
      	axios.get('/finsta/user')
      	.then( res => {
         this.setState(prevState => ({
-          apiDataLoaded: true,
-          apiData: res.data.data
+          apiUserLoaded: true,
+          apiUser: res.data.data
         }))
       })
      	this.targetElement= document.querySelector('scroll')
