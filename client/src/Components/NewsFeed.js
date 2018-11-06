@@ -27,7 +27,7 @@ class NewsFeed extends Component {
           apiData: res.data.data
         }))
       })
-     	this.targetElement= document.querySelector('scroll')
+     	// this.targetElement= document.querySelector('scroll')
 	}
 
 	renderPictures() {
@@ -49,7 +49,7 @@ class NewsFeed extends Component {
 			<div className = 'newsFeed'>
 				<NavBar/>
 				
-				{this.enableScroll()}
+			
 				<div>
 					{this.renderPictures()}
 				</div>
