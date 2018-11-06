@@ -7,7 +7,6 @@ class Picture extends Component {
 	render () {
 		return (
 			<div>
-
 				<img className="picture" src={this.props.picture.img_url} alt="Camera"/>
 				<p>{this.props.picture.user_id}</p>
 			</div>
