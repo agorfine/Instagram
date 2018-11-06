@@ -78,7 +78,10 @@ export default class LogInPage extends Component {
           <input type="submit" value="Submit!" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={`/profilepage/${this.state.username}`}/>
+          ? <Redirect push to={{
+              pathname: '/Newsfeed',
+              state: {referrer: this.state.username}
+            }} />
           : ''}
           {this.state.fireCreateAccount
           ? alert('create account please')

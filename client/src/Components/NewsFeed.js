@@ -3,7 +3,7 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 import Picture from './Picture';
 import axios from 'axios';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll } from 'body-scroll-lock';
 
 
 class NewsFeed extends Component {
@@ -25,6 +25,7 @@ class NewsFeed extends Component {
 	}
 
 	renderPictures() {
+		const username = this.props.location && this.props.location.state.referrer
 		if(this.state.apiDataLoaded) {
 			return this.state.apiData.map(d => {
 				return(
@@ -35,13 +36,15 @@ class NewsFeed extends Component {
 	}
 
 	render(){
+		const username = this.props.location && this.props.location.state.referrer
+
 		return (
 			<div className="newsFeed">
 				<NavBar/>
 				<div className="scroll">
 					{this.renderPictures()}
 				</div>
-				<Footer/>
+				<Footer username= {username}/>
 			</div>
 		)
 	}	

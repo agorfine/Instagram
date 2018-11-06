@@ -21,7 +21,7 @@ class App extends Component {
           <Route path='/Newsfeed' component= { NewsFeed } />
           <Route path='/AddPhoto' component= { AddPhoto } />
           <Route path='/Explore' component= { Explore } />
-          <Route path='/ProfilePage' component = { ProfilePage } />
+          <Route path='/ProfilePage/' component = { ProfilePage } />
           <Route path='/Comments' component = { Comments } />
           <Route path='/' component= { LogInPage } />
 

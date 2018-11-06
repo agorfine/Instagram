@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
+class ProfilePage extends Component {
 
-export default class ProfilePage extends Component {
-  render(){
-    return(
-      <h1>ProfilePage</h1>
-      )
-  }
+	render () {
+		return (
+			<div>
+				hello
+			</div>
+		)
+	}
+
 }
+
+export default ProfilePage;
