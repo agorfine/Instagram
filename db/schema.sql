@@ -47,8 +47,8 @@ INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/i
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537198810/samples/food/spices.jpg', 'caption here');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449233/Screenshot_20181105-151934_Instagram.jpg', 'caption here');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://imgur.com/s8TVefK.jpg', 'The Happiest Place on Earth!');
-INSERT INTO comments VALUES (1, 1, 1, 'SICKKKKK');
-INSERT INTO comments VALUES (2, 1, 2, 'you\'re the cutest');
-INSERT INTO likes VALUES (1, 1, 1);
-INSERT INTO likes VALUES (2, 1, 2);
-INSERT INTO likes VALUES (3, 1, 3);
+INSERT INTO comments VALUES (DEFAULT, 1, 1, 'SICKKKKK');
+INSERT INTO comments VALUES (DEFAULT, 1, 2, 'youre the cutest');
+INSERT INTO likes VALUES (DEFAULT, 1, 1);
+INSERT INTO likes VALUES (DEFAULT, 1, 2);
+INSERT INTO likes VALUES (DEFAULT, 1, 3);
