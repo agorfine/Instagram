@@ -7,22 +7,18 @@ export default class NewAccount extends Component {
   state = {
     username: '',
     password:'',
-    passwordConfirmed:''
+    full_name: '',
+    phone: '',
+    fireRedirect: false
   }
 
-  handleInputChangeUsername(e){
-    console.log(e.target.value)
-    const value= e.target.value
-    this.setState(prevState => ({
-        username: value,
-    }))
-  }
 
   handleInputChange(e){
     console.log(e.target.value)
-    const value= e.target.value
+    const name = e.target.name
+    const value = e.target.value
     this.setState(prevState => ({
-        password: value
+       [name]: value
     }))
   }
 
@@ -30,21 +26,16 @@ export default class NewAccount extends Component {
   // the event for a form is...onSubmit
   handleFormSubmit(e){
     e.preventDefault()
-    axios.post('http://localhost:3001/finsta', {
+    axios.post('/', {
        username: this.state.username,
        password: this.state.password,
     }).then(res => {
-      if(res.data.data === 'good pass'){
       this.setState({
-        fireRedirect:true,
-      })} else {
-       this.setState({
-        fireCreateAccount:true,
+        newId: res.data.data.id,
+        fireRedirect:true
       })
-      }
-    })
-  }
-
+  })
+}
 
 
   render() {
@@ -56,10 +47,10 @@ export default class NewAccount extends Component {
             Username
             <input
               type="text"
-              placeholder="User username"
+              placeholder="Username"
               username="username"
               value={this.state.username}
-              onChange={(e) => this.handleInputChangeUsername(e)}
+              onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <label>
@@ -69,6 +60,26 @@ export default class NewAccount extends Component {
               placeholder="Password"
               username="password"
               value={this.state.password}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Full Name
+            <input
+              type="text"
+              placeholder="Full Name"
+              username="username"
+              value={this.state.username}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Phone
+            <input
+              type="text"
+              placeholder="Phone"
+              username="username"
+              value={this.state.username}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
