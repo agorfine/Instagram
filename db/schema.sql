@@ -48,7 +48,7 @@ INSERT INTO pictures VALUES (8, 3, 'https://res.cloudinary.com/dvjtpejbw/image/u
 INSERT INTO pictures VALUES (9, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449233/Screenshot_20181105-151934_Instagram.jpg', 'caption here');
 INSERT INTO pictures VALUES (10, 3, 'https://imgur.com/s8TVefK.jpg', 'The Happiest Place on Earth!');
 INSERT INTO comments VALUES (1, 1, 1, 'SICKKKKK');
-INSERT INTO comments VALUES (2, 1, 2, "you're the cutest");
+INSERT INTO comments VALUES (2, 1, 2, 'you\'re the cutest');
 INSERT INTO likes VALUES (1, 1, 1);
 INSERT INTO likes VALUES (2, 1, 2);
 INSERT INTO likes VALUES (3, 1, 3);
