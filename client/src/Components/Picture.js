@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import UsernameCaption from './UsernameCaption'
 import axios from 'axios';
 
@@ -17,7 +16,6 @@ class Picture extends Component {
           apiData: res.data.data
         }))
       })
-     	this.targetElement= document.querySelector('scroll')
 	}
 
 	renderUserName() {
@@ -34,8 +32,7 @@ class Picture extends Component {
 		return (
 			<div>
 				<img className="picture" src={this.props.picture.img_url} alt="Camera"/>
-				<p>{this.props.picture.user_id}</p>
-				<p>{this.renderUserName()}</p>
+				
 			</div>
 		)
 	}
