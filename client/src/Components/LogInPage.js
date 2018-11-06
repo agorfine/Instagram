@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import '../css/login.css'
 
 export default class LogInPage extends Component {
@@ -10,16 +11,6 @@ export default class LogInPage extends Component {
     fireRedirect:false,
   }
 
-componentDidMount() {
-    axios.get('http://localhost:3001/finsta/userauth')
-      .then( res => {
-          this.setState(prevState => ({
-          availableUser: res.data.data
-            })
-         )
-      console.log(res.data.data)
-    })
-   }
 
   // checkForUser(){
   //     if(this.state.username == this.state.availableUser){
@@ -50,17 +41,17 @@ componentDidMount() {
   // the event for a form is...onSubmit
   handleFormSubmit(e){
     e.preventDefault()
-    axios.post('http://localhost:3001/finsta/userauth',  {
+    axios.post('http://localhost:3001/finsta/userauth', {
        username: this.state.username,
        password: this.state.password,
     }).then(res => {
+      if(res.data.data === 'good pass'){
       this.setState({
-        fireRedirect:true
-      })
+        fireRedirect:true,
+      })}
     })
-    console.log(this.state.username)
-    console.log(this.state.password)
   }
+
 
 
   render() {
@@ -89,6 +80,9 @@ componentDidMount() {
           </label>
           <input type="submit" value="Submit!" />
         </form>
+        {this.state.fireRedirect
+          ? <Redirect push to={`/newsfeed`} />
+          : ''}
       </div>
     )
   }
