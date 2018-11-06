@@ -43,17 +43,17 @@ Model.create = users => {
   );
 };
 
-Model.create = pictures => {
-  return db.one(
-    `
-    INSERT INTO pictures
-    (user_id, img_url)
-    VALUES ($1, $2)
-    RETURNING *
-  `,
-    [pictures.user_id, pictures.img_url]
-  );
-};
+// Model.create = pictures => {
+//   return db.one(
+//     `
+//     INSERT INTO pictures
+//     (user_id, img_url)
+//     VALUES ($1, $2)
+//     RETURNING *
+//   `,
+//     [pictures.user_id, pictures.img_url]
+//   );
+// };
 
 Model.update = (users, id) => {
   return db.one(

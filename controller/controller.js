@@ -27,7 +27,6 @@ controller.user = async (req, res) => {
         data = { data: 'bad pass' }
       }
       res.json(data);
-
     }).catch(err => {
       console.log(err);
       res.end()
@@ -38,7 +37,6 @@ controller.show = (req, res) => {
   Model.findAll()
     .then(obj => {
       res.json({
-        message:'ok',
         data: obj,
       });
     }).catch(err => {
@@ -53,7 +51,7 @@ controller.create = (req, res) => {
     full_name: req.body.full_name,
     phone: req.body.phone,
     bio: req.body.bio,
-    profpic: req.body.profpic_url
+    profpic: req.body.profpic
   })
   .then(obj => {
     res.json({
