@@ -7,17 +7,8 @@ export default class NewAccount extends Component {
   state = {
     username: '',
     password:'',
+    passwordConfirmed:''
   }
-
-
-  // checkForUser(){
-  //     if(this.state.username == this.state.availableUser){
-  //     alert('route to the newsfeed')
-  //    } else {
-  //     console.log('no match go to create')
-  //    }
-  //   }
-
 
   handleInputChangeUsername(e){
     console.log(e.target.value)
@@ -39,7 +30,7 @@ export default class NewAccount extends Component {
   // the event for a form is...onSubmit
   handleFormSubmit(e){
     e.preventDefault()
-    axios.post('http://localhost:3001/finsta/userauth', {
+    axios.post('http://localhost:3001/finsta', {
        username: this.state.username,
        password: this.state.password,
     }).then(res => {
