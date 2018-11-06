@@ -1,11 +1,14 @@
 const db = require('../db/config');
 const Model = {};
 
-//explore page
+//explorer page
 Model.findAll = () => {
   return db.query(`
-    SELECT * FROM pictures
-    ORDER BY pictures.id DESC
+    SELECT pictures.id, pictures.user_id, pictures.img_url, pictures.caption, users.username
+    FROM pictures
+    JOIN users
+    ON pictures.user_id = users.id
+    ORDER BY pictures.id DESC;
   `)
 }
 
