@@ -5,7 +5,6 @@ controller.index = (req, res) => {
   Model.findAll()
     .then(obj => {
       res.json({
-        message:'ok',
         data: obj,
       });
     }).catch(err => {
@@ -13,6 +12,7 @@ controller.index = (req, res) => {
     });
 }
 
+// checks if username and password entered by user exists and is correct
 controller.user = async (req, res) => {
     const user = await Model.findUser(req.body.username)
     .then(obj => {
