@@ -48,9 +48,8 @@ class NewsFeed extends Component {
 		return (
 			<div className = 'newsFeed'>
 				<NavBar/>
-				
-				{this.enableScroll()}
 				<div>
+					{this.enableScroll()}
 					{this.renderPictures()}
 				</div>
 				<Footer/>

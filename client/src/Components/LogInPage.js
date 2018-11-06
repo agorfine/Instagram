@@ -59,6 +59,7 @@ componentDidMount() {
       })
     })
     console.log(this.state.username)
+    console.log(this.state.password)
   }
 
 

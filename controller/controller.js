@@ -90,4 +90,3 @@ controller.destroy = (req, res) => {
 }
 
 module.exports = controller;
-
