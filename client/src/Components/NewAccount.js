@@ -5,6 +5,7 @@ import '../css/login.css'
 
 export default class NewAccount extends Component {
   state = {
+    newId: '',
     username: '',
     password:'',
     full_name: '',
@@ -112,7 +113,7 @@ export default class NewAccount extends Component {
           <input type="submit" value="Submit!" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={`/newsfeed`} />
+          ? <Redirect push to={`/newsfeed`} activeUser = {this.state.username} />
           : ''}
       </div>
     )
