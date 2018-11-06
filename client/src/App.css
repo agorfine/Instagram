@@ -5,6 +5,25 @@
   justify-content: space-between;
 }
 
+.footer {
+  background-color: rgb(250,250,250);
+  height: 9vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right:.5rem;
+  padding-left: .5rem;
+}
+
+.button {
+  height: 6vh;
+  width: 14vw;
+}
+
+.notification {
+  height: 7vh;
+}
+
 .camera {
   height: 5vh;
   align-self: center;

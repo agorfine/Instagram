@@ -94,4 +94,3 @@ Model.destroy = id => {
 };
 
 module.exports = Model
-
