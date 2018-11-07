@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Picture from './Picture'
-import NavBar from './NavBar'
-import Footer from './Footer'
 import { disableBodyScroll } from 'body-scroll-lock';
 
 class ProfilePage extends Component {
@@ -12,14 +10,12 @@ class ProfilePage extends Component {
   }
 
 	componentDidMount() {
-    console.log('working')
 	    axios.get(`/${this.props.match.params.id}`)
      	.then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
           apiData: res.data.data
         }))
-        console.log(res.data.data)
       })
       this.targetElement = document.querySelector('.scroll')
       disableBodyScroll(this.targetElement)
