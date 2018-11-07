@@ -36,11 +36,9 @@ class ProfilePage extends Component {
 	render () {
 		return (
 			<div className="newsFeed">
-        <NavBar />
         <div className="scroll">
 			     {this.renderPictures()}
          </div>
-        <Footer />
 			</div>
 		)
 	}

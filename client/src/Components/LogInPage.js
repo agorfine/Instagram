@@ -80,7 +80,7 @@ export default class LogInPage extends Component {
         </form>
         {this.state.fireRedirect
           ? <Redirect push to={{
-              pathname: '/Newsfeed',
+              pathname: '/Main',
               state: {referrer: this.state.username}
             }} />
           : ''}
