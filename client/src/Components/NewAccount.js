@@ -17,7 +17,6 @@ export default class NewAccount extends Component {
 
 
   handleInputChange(e){
-    console.log(e.target.value)
     const name = e.target.name
     const value = e.target.value
     this.setState(prevState => ({
