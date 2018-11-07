@@ -19,13 +19,14 @@ class NewsFeed extends Component {
           apiDataLoaded: true,
           apiData: res.data.data
         }))
+        console.log(res.data.data)
       })
      	this.targetElement = document.querySelector('.scroll')
      	disableBodyScroll(this.targetElement)
 	}
 
 	renderPictures() {
-		
+
 		if(this.state.apiDataLoaded) {
 			return this.state.apiData.map(d => {
 				return(
@@ -36,20 +37,17 @@ class NewsFeed extends Component {
 	}
 
 	render(){
-		const username = this.props.location && this.props.location.state.referrer
 
 		return (
 			<div className="newsFeed">
-				<NavBar/>
 				<div className="scroll">
 					{this.renderPictures()}
 				</div>
-				<Footer username= {username}/>
 			</div>
 		)
-	}	
+	}
 }
-	
+
 
 
 export default NewsFeed;

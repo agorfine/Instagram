@@ -12,7 +12,7 @@ Model.findAll = () => {
   `)
 }
 
-//newsfeed after login
+//newsfeed after login????
 Model.findUser = (username) => {
   return db.query(`
     SELECT *
@@ -21,13 +21,15 @@ Model.findUser = (username) => {
   `, username)
 }
 
+// profile page
 Model.findByUsername = id => {
   return db.query(
     `
-    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username FROM pictures
+    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username
+    FROM pictures
     JOIN users
     ON pictures.user_id = users.id
-    WHERE users.username = $1
+    WHERE users.username = $1;
   `,
     [id]
   );

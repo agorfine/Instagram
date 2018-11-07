@@ -40,6 +40,8 @@ export default class LogInPage extends Component {
        password: this.state.password,
     }).then(res => {
       if(res.data.data === 'good pass'){
+        console.log(res)
+        localStorage.setItem('username', res.data.user)
       this.setState({
         fireRedirect:true,
       })} else {
@@ -69,7 +71,7 @@ export default class LogInPage extends Component {
           <label>
             <input
               className='input'
-              type="text"
+              type="password"
               placeholder="Password"
               username="password"
               value={this.state.password}
@@ -79,10 +81,7 @@ export default class LogInPage extends Component {
           <input className="submit" type="submit" value="Login" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={{
-              pathname: '/Newsfeed',
-              state: {referrer: this.state.username}
-            }} />
+          ? <Redirect push to={'/Main'} />
           : ''}
           {this.state.fireCreateAccount
           ? alert('create account please')
