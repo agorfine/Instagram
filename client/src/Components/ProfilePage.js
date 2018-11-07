@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Picture from './Picture'
+import NavBar from './NavBar'
+import Footer from './Footer'
+import { disableBodyScroll } from 'body-scroll-lock';
 
 class ProfilePage extends Component {
   state = {
@@ -16,7 +19,8 @@ class ProfilePage extends Component {
           apiData: res.data.data
         }))
       })
-
+      this.targetElement = document.querySelector('.scroll')
+      disableBodyScroll(this.targetElement)
   }
 
   renderPictures() {
@@ -31,8 +35,12 @@ class ProfilePage extends Component {
 
 	render () {
 		return (
-			<div>
-			{this.renderPictures()}
+			<div className="newsFeed">
+        <NavBar />
+        <div className="scroll">
+			     {this.renderPictures()}
+         </div>
+        <Footer />
 			</div>
 		)
 	}
