@@ -6,7 +6,7 @@ class ProfilePage extends Component {
 	render () {
 		return (
 			<div>
-				hello
+				hi
 			</div>
 		)
 	}
