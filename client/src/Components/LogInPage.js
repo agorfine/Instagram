@@ -53,21 +53,22 @@ export default class LogInPage extends Component {
 
   render() {
   return(
-    <div classusername="login">
+    <div className="login">
+        <img className="loginLogo" src="https://res.cloudinary.com/drsaojfyp/image/upload/v1541561444/Screen_Shot_2018-11-06_at_10.29.04_PM.png" alt="Instagram"/>
         <form onSubmit={(e) => this.handleFormSubmit(e)}>
           <label>
-            Username
             <input
+              className='input1'
               type="text"
-              placeholder="User username"
+              placeholder="Username"
               username="username"
               value={this.state.username}
               onChange={(e) => this.handleInputChangeUsername(e)}
             />
           </label>
           <label>
-            Password
             <input
+              className='input'
               type="text"
               placeholder="Password"
               username="password"
@@ -75,7 +76,7 @@ export default class LogInPage extends Component {
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
-          <input type="submit" value="Submit!" />
+          <input className="submit" type="submit" value="Login" />
         </form>
         {this.state.fireRedirect
           ? <Redirect push to={{
