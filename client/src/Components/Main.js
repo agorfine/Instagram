@@ -13,7 +13,6 @@ import Comments from './Comments'
 class Main extends Component {
 
 render(){
-    const username = this.props.location && this.props.location.state.referrer
 
     return (
       <Router>
@@ -24,12 +23,12 @@ render(){
               <Route path='/Newsfeed' component= { NewsFeed } />
               <Route path='/AddPhoto' component= { AddPhoto } />
               <Route path='/Explore' component= { Explore } />
-              <Route path='/ProfilePage/:id' />
+              <Route path='/ProfilePage/:id' component = { ProfilePage }/>
               <Route path='/Comments' component = { Comments } />
               <Route path='/Main' component={ NewsFeed } />
             </Switch>
           </div>
-          <Footer username= { username } />
+          <Footer />
         </div>
       </Router>
     )

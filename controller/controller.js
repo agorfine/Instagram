@@ -22,7 +22,7 @@ controller.user = async (req, res) => {
         data = { data: 'no user' }
       }
       if (req.body.password === obj[0].password){
-        data = { data: 'good pass' }
+        data = { data: 'good pass', user: obj[0].username }
       } else {
         data = { data: 'bad pass' }
       }

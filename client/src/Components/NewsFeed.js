@@ -37,7 +37,6 @@ class NewsFeed extends Component {
 	}
 
 	render(){
-		const username = this.props.location && this.props.location.state.referrer
 
 		return (
 			<div className="newsFeed">
