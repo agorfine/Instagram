@@ -12,7 +12,7 @@ Model.findAll = () => {
   `)
 }
 
-//newsfeed after login
+//newsfeed after login????
 Model.findUser = (username) => {
   return db.query(`
     SELECT *
@@ -21,6 +21,7 @@ Model.findUser = (username) => {
   `, username)
 }
 
+// profile page
 Model.findByUsername = id => {
   return db.query(
     `

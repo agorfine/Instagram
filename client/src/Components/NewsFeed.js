@@ -19,13 +19,14 @@ class NewsFeed extends Component {
           apiDataLoaded: true,
           apiData: res.data.data
         }))
+        console.log(res.data.data)
       })
      	this.targetElement = document.querySelector('.scroll')
      	disableBodyScroll(this.targetElement)
 	}
 
 	renderPictures() {
-		
+
 		if(this.state.apiDataLoaded) {
 			return this.state.apiData.map(d => {
 				return(
@@ -47,9 +48,9 @@ class NewsFeed extends Component {
 				<Footer username= {username}/>
 			</div>
 		)
-	}	
+	}
 }
-	
+
 
 
 export default NewsFeed;
