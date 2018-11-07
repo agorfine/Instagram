@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
-import Footer from './Footer';
 import Picture from './Picture';
 import axios from 'axios';
 import { disableBodyScroll } from 'body-scroll-lock';
@@ -19,7 +17,7 @@ class NewsFeed extends Component {
           apiDataLoaded: true,
           apiData: res.data.data
         }))
-        console.log(res.data.data)
+        // console.log(res.data.data)
       })
      	this.targetElement = document.querySelector('.scroll')
      	disableBodyScroll(this.targetElement)

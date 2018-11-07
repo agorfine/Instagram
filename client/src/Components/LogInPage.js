@@ -14,7 +14,7 @@ export default class LogInPage extends Component {
 
 
   handleInputChangeUsername(e){
-    console.log(e.target.value)
+    // console.log(e.target.value)
     const value= e.target.value
     this.setState(prevState => ({
         username: value,
@@ -23,7 +23,7 @@ export default class LogInPage extends Component {
   }
 
   handleInputChange(e){
-    console.log(e.target.value)
+    // console.log(e.target.value)
     const value= e.target.value
     this.setState(prevState => ({
         password: value,
@@ -40,7 +40,6 @@ export default class LogInPage extends Component {
        password: this.state.password,
     }).then(res => {
       if(res.data.data === 'good pass'){
-        console.log(res)
         localStorage.setItem('username', res.data.user)
       this.setState({
         fireRedirect:true,
