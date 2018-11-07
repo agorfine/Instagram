@@ -22,7 +22,7 @@ Model.findUser = (username) => {
 }
 
 Model.findByUsername = id => {
-  return db.oneOrNone(
+  return db.query(
     `
     SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username FROM pictures
     JOIN users

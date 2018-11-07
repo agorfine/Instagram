@@ -5,10 +5,13 @@ import '../css/login.css'
 
 export default class NewAccount extends Component {
   state = {
+    newId: '',
     username: '',
     password:'',
     full_name: '',
     phone: '',
+    bio: '',
+    profpic: '',
     fireRedirect: false
   }
 
@@ -29,6 +32,10 @@ export default class NewAccount extends Component {
     axios.post('/', {
        username: this.state.username,
        password: this.state.password,
+       full_name: this.state.full_name,
+       phone: this.state.phone,
+       bio: this.state.bio,
+       profpic: this.state.profpic
     }).then(res => {
       this.setState({
         newId: res.data.data.id,
@@ -48,7 +55,7 @@ export default class NewAccount extends Component {
             <input
               type="text"
               placeholder="Username"
-              username="username"
+              name="username"
               value={this.state.username}
               onChange={(e) => this.handleInputChange(e)}
             />
@@ -58,7 +65,7 @@ export default class NewAccount extends Component {
             <input
               type="text"
               placeholder="Password"
-              username="password"
+              name="password"
               value={this.state.password}
               onChange={(e) => this.handleInputChange(e)}
             />
@@ -68,8 +75,8 @@ export default class NewAccount extends Component {
             <input
               type="text"
               placeholder="Full Name"
-              username="username"
-              value={this.state.username}
+              name="full_name"
+              value={this.state.full_name}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
@@ -78,15 +85,35 @@ export default class NewAccount extends Component {
             <input
               type="text"
               placeholder="Phone"
-              username="username"
-              value={this.state.username}
+              name="phone"
+              value={this.state.phone}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Bio
+            <input
+              type="text"
+              placeholder="Bio"
+              name="bio"
+              value={this.state.bio}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Profile Picture URL
+            <input
+              type="text"
+              placeholder="Profile Pic URL"
+              name="profpic"
+              value={this.state.profpic}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
           <input type="submit" value="Submit!" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={`/newsfeed`} />
+          ? <Redirect push to={`/newsfeed`} activeUser = {this.state.username} />
           : ''}
       </div>
     )
