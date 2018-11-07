@@ -12,9 +12,17 @@ export default class LogInPage extends Component {
     fireCreateAccount: false
   }
 
+  // Do Not delete.  This is our eventual auto refresh login.
+
+  // componentDidMount(){
+  //   const auth = localStorage.getItem('username')
+  //   if (auth){
+  //     window.location.replace('/Main')
+  //   }
+  // }
+
 
   handleInputChangeUsername(e){
-    // console.log(e.target.value)
     const value= e.target.value
     this.setState(prevState => ({
         username: value,
@@ -23,7 +31,6 @@ export default class LogInPage extends Component {
   }
 
   handleInputChange(e){
-    // console.log(e.target.value)
     const value= e.target.value
     this.setState(prevState => ({
         password: value,
