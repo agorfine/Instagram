@@ -25,7 +25,7 @@ class NewsFeed extends Component {
 	}
 
 	renderPictures() {
-		const username = this.props.location && this.props.location.state.referrer
+		
 		if(this.state.apiDataLoaded) {
 			return this.state.apiData.map(d => {
 				return(
