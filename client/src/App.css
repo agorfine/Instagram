@@ -62,7 +62,13 @@
   height: 7vh;
 }
 
-.userProfile{
+.userProfileHome{
   background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541516024/Screen_Shot_2018-11-06_at_9.47.52_AM.png');
   background-size: contain;
 }
+
+.homeButtonHome{
+  background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541516047/Screen_Shot_2018-11-06_at_9.48.13_AM.png');
+  background-size: contain;
+}
+

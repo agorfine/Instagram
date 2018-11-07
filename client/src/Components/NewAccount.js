@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import '../css/login.css'
+import '../css/newaccount.css';
 
 export default class NewAccount extends Component {
   state = {
@@ -47,7 +47,7 @@ export default class NewAccount extends Component {
 
   render() {
   return(
-    <div classusername="login">
+    <div className="login">
        <h1>Create Account Page</h1>
         <form onSubmit={(e) => this.handleFormSubmit(e)}>
           <label>
@@ -113,7 +113,10 @@ export default class NewAccount extends Component {
           <input type="submit" value="Submit!" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={`/newsfeed`} activeUser = {this.state.username} />
+          ? <Redirect push to={{
+              pathname: '/Newsfeed',
+              state: {referrer: this.state.username}
+            }} />
           : ''}
       </div>
     )

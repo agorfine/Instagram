@@ -25,10 +25,11 @@ Model.findUser = (username) => {
 Model.findByUsername = id => {
   return db.query(
     `
-    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username FROM pictures
+    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username
+    FROM pictures
     JOIN users
     ON pictures.user_id = users.id
-    WHERE users.username = $1
+    WHERE users.username = $1;
   `,
     [id]
   );
