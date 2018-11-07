@@ -28,6 +28,7 @@ export default class NewAccount extends Component {
   // the event for a form is...onSubmit
   handleFormSubmit(e){
     e.preventDefault()
+
     axios.post('/', {
        username: this.state.username,
        password: this.state.password,
@@ -36,11 +37,14 @@ export default class NewAccount extends Component {
        bio: this.state.bio,
        profpic: this.state.profpic
     }).then(res => {
+      localStorage.setItem('username', this.state.username)
+      console.log(this.state.username)
       this.setState({
         newId: res.data.data.id,
         fireRedirect:true
       })
   })
+
 }
 
 
@@ -62,7 +66,7 @@ export default class NewAccount extends Component {
           <label>
             Password
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               name="password"
               value={this.state.password}
@@ -113,7 +117,7 @@ export default class NewAccount extends Component {
         </form>
         {this.state.fireRedirect
           ? <Redirect push to={{
-              pathname: '/Newsfeed',
+              pathname: '/main',
               state: {referrer: this.state.username}
             }} />
           : ''}
