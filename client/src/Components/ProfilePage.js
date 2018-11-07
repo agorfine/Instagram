@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Picture from './Picture'
 
 class ProfilePage extends Component {
+  state = {
+    apiDataLoaded: false,
+    apiData: null
+  }
 
 	componentDidMount() {
-	    axios.get('/profilepage/:id')
+	    axios.get(`/${this.props.match.params.id}`)
      	.then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
           apiData: res.data.data
         }))
-        console.log(res.data)
       })
-	     
+
+  }
+
+  renderPictures() {
+    if(this.state.apiDataLoaded) {
+      return this.state.apiData.map(d => {
+        return(
+          <Picture key={d.id} picture={d} />
+        )
+      })
+    } else return <p>Loading...</p>
   }
 
 	render () {
-
 		return (
 			<div>
-				hi
+			{this.renderPictures()}
 			</div>
 		)
 	}
