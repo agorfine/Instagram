@@ -10,14 +10,12 @@ class ProfilePage extends Component {
   }
 
 	componentDidMount() {
-    // console.log('working')
 	    axios.get(`/${this.props.match.params.id}`)
      	.then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
           apiData: res.data.data
         }))
-        // console.log(res.data.data)
       })
       this.targetElement = document.querySelector('.scroll')
       disableBodyScroll(this.targetElement)
