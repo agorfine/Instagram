@@ -25,7 +25,7 @@ class Footer extends Component {
 		let username = localStorage.getItem('username')
 
 		const isHome = (this.state.isHome) ? 'noHome' : 'homeButtonHome'
-		const isProf = (this.state.isProf) ? 'userProfileHome' : 'notProfile' 
+		const isProf = (this.state.isProf) ? 'notProfile' : 'userProfileHome'
 	
 
 		return (
