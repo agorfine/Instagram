@@ -7,16 +7,16 @@ class AddPhoto extends Component {
       selectedFile: null
     }
 
-    fileChangedHandler = (event) => {
+    fileChangedHandler(e){
       this.setState({
-        selectedFile: event.target.files[0],
+        selectedFile: e.target.files[0],
         username: localStorage.getItem('username')
       })
     }
 
    // HOW TO AMKE THE UPLOAD HANDLER FUNCTION POST THE IMAGE TO THE IMAGES TABLE
    // WITH BOTH NEW ID AND MATCHING USER ID.
-    uploadHandler = () => {
+    uploadHandler(){
       console.log(this.state.selectedFile)
       // axios.post('/', {
       //   id:???
@@ -30,8 +30,6 @@ class AddPhoto extends Component {
 //IF YOU CHANGE INPUT TYPE TO FILE YOU CAN SELET A FILE ON YOUR COMPUTER
 // I ALSO ADDED PLACEHOLDER AS A URL SO THAT MAY NEED TO BE REMOVED
     render() {
-
-
         return (
           <div>
               <div className = 'addphoto'>
