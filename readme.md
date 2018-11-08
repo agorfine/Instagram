@@ -99,22 +99,24 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| App | H | 3hrs | 10hrs | hrs |
-| Switcher | H | 3hrs| 1hrs | hrs |
-| Create User Account | H | 7hrs | 5hrs | hrs |
-| Login Page | H | 5hrs | 1hrs | hrs |
-| Database | H | 5hrs| 5hrs | hrs |
-| Linking Components to DB | H | 10hrs| 10hrs | hrs |
-| Newsfeed | H | 4hrs | 4hrs | hrs |
-| Navigation | H | 2hrs | 3hrs | hrs |
-| Footer | H | 2hrs | 5hrs | hrs |
-| Add Photo | H | 3hrs | hrs | hrs |
-| Profile Page | L | 5hrs | 2hrs | hrs |
-| Messages | L | 10hrs | hrs | hrs |
-| Comments | L | 6hrs | hrs | hrs |
-| Git Project Workflow | H | 3hrs | 2hrs | hrs |
-| | L | ∞hrs | hrs | hrs |
-| Total | H | 68hrs| hrs | hrs |
+| App | H | 3hrs | 2hrs | 2hrs |
+| Switcher | H | 3hrs| 1hrs | 1hrs |
+| Create User Account | H | 7hrs | 3hrs | 3hrs |
+| Login Page/ Authentication | H | 5hrs | 6hrs | 6hrs |
+| Database | H | 5hrs| 3hrs | 3hrs |
+| Linking Components to DB | H | 10hrs| 6hrs | 6hrs |
+| Newsfeed | H | 4hrs | 5hrs | hrs |
+| Navigation | H | 2hrs | 1hrs | hrs |
+| Footer | H | 2hrs | 8hrs | hrs |
+| Add Photo | H | 3hrs | 2hrs | hrs |
+| Profile Page | L | 5hrs | 2.5hrs | hrs |
+| Messages | L | 10hrs | 0hrs | hrs |
+| Comments | L | 6hrs | 0hrs | hrs |
+| Git Project Workflow | H | 3hrs | 2.5hrs | hrs |
+| Wireframing| H | 5hrs | 5hrs | hrs |
+| CSS| H | ∞hrs | 5hrs | hrs |
+| Project Management| H | 2hrs | 2hrs | hrs |
+| Total | H | 68hrs| 52.5hrs | hrs |
 
 
 ## Helper Functions
