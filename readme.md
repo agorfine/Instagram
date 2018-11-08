@@ -75,7 +75,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Define the the React components and the architectural design of your app.
 
-[React Architectural Design](https://imgur.com/znJfojK "React Architectural Design")
+[React Architectural Design](https://res.cloudinary.com/dvjtpejbw/image/upload/v1541690969/IMG_2973.jpg)
 
 [ERD](https://imgur.com/a/fLTtbNE)
 
