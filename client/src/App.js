@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import './App.css';
 import './css/login.css'
 
@@ -17,7 +17,6 @@ class App extends Component {
           <Route path='/CreateAccount' component= { NewAccount } />
           <Route path='/Main' component= { Main } />
           <Route path='/' component= { LogInPage } />
-          <Redirect to='/' />
         </Switch>
       </div>
     );

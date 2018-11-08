@@ -15,8 +15,9 @@ DROP TABLE IF EXISTS pictures;
 CREATE TABLE pictures (
   id SERIAL PRIMARY KEY,
   user_id INT NOT NULL,
-  img_url VARCHAR(255) NOT NULL,
-  caption VARCHAR(255)
+  img_url VARCHAR(255),
+  caption VARCHAR(255),
+  img_file BYTEA
 );
 
 DROP TABLE IF EXISTS comments;

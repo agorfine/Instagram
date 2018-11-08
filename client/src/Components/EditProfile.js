@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-import '../css/newaccount.css';
 
-export default class NewAccount extends Component {
+export default class EditProfile extends Component {
   state = {
     newId: '',
     username: '',
@@ -13,6 +11,22 @@ export default class NewAccount extends Component {
     bio: '',
     profpic: '',
     fireRedirect: false
+  }
+
+  componentDidMount() {
+  axios.get(`/${this.props.match.params.id}`)
+    .then((res) => {
+      console.log(res);
+      const obj = res.data.data;
+      this.setState({
+        username: obj.username,
+        password: obj.password,
+        full_name: obj.full_name,
+        phone: obj.phone,
+        bio: obj.bio,
+        profpic: obj.profpic,
+      })
+    }).catch(err => console.log(err));
   }
 
 
@@ -29,7 +43,7 @@ export default class NewAccount extends Component {
   // the event for a form is...onSubmit
   handleFormSubmit(e){
     e.preventDefault()
-    axios.post('/', {
+    axios.put('/', {
        username: this.state.username,
        password: this.state.password,
        full_name: this.state.full_name,
