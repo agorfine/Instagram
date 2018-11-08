@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 import '../css/login.css';
+import '../css/rosslogincss.css';
+
 
 export default class LogInPage extends Component {
   state = {
@@ -59,6 +61,7 @@ export default class LogInPage extends Component {
   }
 
 
+
   render() {
   return(
     <div className="login">
@@ -86,13 +89,21 @@ export default class LogInPage extends Component {
           </label>
           <input className="submit" type="submit" value="Login" />
         </form>
+
         {this.state.fireRedirect
           ? <Redirect push to={'/Main'} />
           : ''}
-          {this.state.fireCreateAccount
-          ? alert('create account please')
-          : ''}
         <Link to='/CreateAccount'>Create User Account</Link>
+        {this.state.fireCreateAccount
+          ?
+          <div className= 'fullBackground'>
+            <div className= 'customAlert'>
+                 <span><p> Incorrect Username</p></span>
+                 <p>The username you entered doesn't appear to belong to an account. Please check your username and try again.</p>
+                  <Link to='/LogInPage' className ='tryAgain' onClick = 'window.location.reload()'> Try Again </Link>
+             </div>
+           </div>
+          : ''}
       </div>
     )
   }
