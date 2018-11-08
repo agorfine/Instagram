@@ -17,6 +17,7 @@ class NewsFeed extends Component {
           apiDataLoaded: true,
           apiData: res.data.data
         }))
+        console.log(res.data.data)
       })
      	this.targetElement = document.querySelector('.scroll')
      	disableBodyScroll(this.targetElement)

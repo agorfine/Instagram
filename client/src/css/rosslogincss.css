@@ -5,7 +5,7 @@
   align-items: center;
   position: absolute;
   background-color: grey;
-  opacity: .7;
+  opacity: .85;
   height: 100%;
   width: 100%;
 }
@@ -15,12 +15,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  opacity: 1;
   width: 65vw;
   height: 20vh;
-  background-color: white;
-  padding: 15px;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 2rem;
+  border-radius: 1rem;
   text-align: center;
 }
 
@@ -31,15 +30,17 @@ span{
 }
 
 p{
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .tryAgain{
   text-decoration: none;
   color:blue;
   font-weight: bold;
-  border-top: 1px solid rgba(0, 0, 255, .3);
-  width: 110%;
+  border-top: .05rem solid rgba(0, 0, 255, .3);
+  width: 100%;
   text-align: center;
-  padding-top: 15px;
+  padding-top: .7rem;
 }
+
+

@@ -100,6 +100,7 @@ export default class LogInPage extends Component {
             <div className= 'customAlert'>
                  <span><p> Incorrect Username</p></span>
                  <p>The username you entered doesn't appear to belong to an account. Please check your username and try again.</p>
+                 <br></br>
                   <Link to='/LogInPage' className ='tryAgain' onClick = 'window.location.reload()'> Try Again </Link>
              </div>
            </div>
