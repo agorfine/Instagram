@@ -73,7 +73,7 @@ return db.oneOrNone(
 };
 
 // edit profile page
-Model.update = (username, id) => {
+Model.update = (users, id) => {
   return db.one(
     `
     UPDATE users SET

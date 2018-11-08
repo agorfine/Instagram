@@ -79,7 +79,7 @@ controller.showUserData = (req, res) => {
 
 //editing profile
 controller.update = (req, res) => {
-  // console.log('this is req: ' req.body)
+  console.log('this is req: ', req.body)
   Model.update({
     username: req.body.username,
     password: req.body.password,
@@ -87,7 +87,7 @@ controller.update = (req, res) => {
     phone: req.body.phone,
     bio: req.body.bio,
     profpic_url: req.body.profpic_url
-  }, res.data.data.id)
+  }, req.body.username)
   .then(obj => {
     res.json({
       message: 'profile updated successfully',
