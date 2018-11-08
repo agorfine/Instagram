@@ -17,6 +17,7 @@ class ProfilePage extends Component {
           apiDataLoaded: true,
           apiData: res.data.data
         }))
+        console.log(res.data.data)
       })
       this.targetElement = document.querySelector('.scroll')
       disableBodyScroll(this.targetElement)
@@ -32,6 +33,13 @@ class ProfilePage extends Component {
     } else return <p>Loading...</p>
   }
 
+  renderUserImg() {
+    if(this.state.apiDataLoaded) {
+      return this.state.apiData[0].profpic_url
+    } else return <p>Loading...</p>
+  }
+
+
 	render () {
 
   let username = localStorage.getItem('username')
@@ -39,7 +47,7 @@ class ProfilePage extends Component {
 		return (
 			<div className="newsFeed">
         <div className="scroll">
-          <div>user img</div>
+          <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
           <Link to = {`/editprofile/${username}`}><div> edit profile </div></Link>
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
