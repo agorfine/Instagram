@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
 
 
 export default class EditProfile extends Component {
@@ -12,6 +12,7 @@ export default class EditProfile extends Component {
     phone: '',
     bio: '',
     profpic: '',
+    newId:'',
     fireRedirect: false
   }
 
@@ -20,7 +21,7 @@ export default class EditProfile extends Component {
 
   axios.get(`/editprofile/${username}`)
     .then((res) => {
-      console.log('this is res: ', res.data.data);
+      // console.log('this is res: ', res.data.data);
       const obj = res.data.data;
       this.setState({
         username: obj.username,
@@ -30,9 +31,15 @@ export default class EditProfile extends Component {
         bio: obj.bio,
         profpic: obj.profpic_url,
       })
-    }).catch(err => console.log(err));
+    }).then(res => {
+        console.log("this is res.data: ", res.data)
+        this.setState({
+          newId: res.data.id,
+          // fireRedirect:true
+        })
+      })
+      .catch(err => console.log(err));
       console.log(this.props.match.params.id)
-
   }
 
 

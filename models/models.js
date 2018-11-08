@@ -64,7 +64,7 @@ Model.create = users => {
 Model.findByUsernameForEdit = id => {
 return db.oneOrNone(
     `
-    SELECT username, password, full_name, phone, bio, profpic_url
+    SELECT id, username, password, full_name, phone, bio, profpic_url
     FROM users
     WHERE username = $1
   `,
@@ -73,7 +73,7 @@ return db.oneOrNone(
 };
 
 // edit profile page
-Model.update = (users, id) => {
+Model.update = (username, id) => {
   return db.one(
     `
     UPDATE users SET
