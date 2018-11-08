@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ProfilePicture from './ProfilePicture'
 import { disableBodyScroll } from 'body-scroll-lock';
+import { Link } from 'react-router-dom';
 
 class ProfilePage extends Component {
   state = {
@@ -32,10 +33,14 @@ class ProfilePage extends Component {
   }
 
 	render () {
+
+  let username = localStorage.getItem('username')
+
 		return (
 			<div className="newsFeed">
         <div className="scroll">
           <div>user img</div>
+          <Link to = {`/editprofile/${username}`}><div> edit profile </div></Link>
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
 			</div>

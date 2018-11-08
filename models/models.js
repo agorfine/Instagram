@@ -21,7 +21,7 @@ Model.findUser = (username) => {
   `, username)
 }
 
-// profile page
+// returns data for profile page
 Model.findByUsername = id => {
   return db.query(
     `
@@ -35,6 +35,7 @@ Model.findByUsername = id => {
   );
 };
 
+// for creating a new account
 Model.create = users => {
   return db.one(
     `
@@ -59,6 +60,19 @@ Model.create = users => {
 //   );
 // };
 
+//get data for edit profile page
+Model.findByUsernameForEdit = id => {
+return db.oneOrNone(
+    `
+    SELECT username, password, full_name, phone, bio, profpic_url
+    FROM users
+    WHERE username = $1
+  `,
+    [id]
+  );
+};
+
+// edit profile page
 Model.update = (users, id) => {
   return db.one(
     `
@@ -69,7 +83,7 @@ Model.update = (users, id) => {
       phone = $4,
       bio = $5,
       profpic_url = $6
-    WHERE id = $7
+    WHERE username = $1
     RETURNING *
   `,
     [users.username, users.password, users.full_name, users.phone, users.bio, users.profpic_url]

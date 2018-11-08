@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
+
 
 export default class EditProfile extends Component {
   state = {
@@ -14,9 +16,11 @@ export default class EditProfile extends Component {
   }
 
   componentDidMount() {
-  axios.get(`/${this.props.match.params.id}`)
+  let username = localStorage.getItem('username')
+
+  axios.get(`/editprofile/${username}`)
     .then((res) => {
-      console.log(res);
+      console.log('this is res: ', res.data.data);
       const obj = res.data.data;
       this.setState({
         username: obj.username,
@@ -24,9 +28,11 @@ export default class EditProfile extends Component {
         full_name: obj.full_name,
         phone: obj.phone,
         bio: obj.bio,
-        profpic: obj.profpic,
+        profpic: obj.profpic_url,
       })
     }).catch(err => console.log(err));
+      console.log(this.props.match.params.id)
+
   }
 
 
@@ -42,8 +48,10 @@ export default class EditProfile extends Component {
 
   // the event for a form is...onSubmit
   handleFormSubmit(e){
+    let username = localStorage.getItem('username')
+
     e.preventDefault()
-    axios.put('/', {
+    axios.put(`/editprofile/${username}`, {
        username: this.state.username,
        password: this.state.password,
        full_name: this.state.full_name,
@@ -52,7 +60,6 @@ export default class EditProfile extends Component {
        profpic: this.state.profpic
     }).then(res => {
       this.setState({
-        newId: res.data.data.id,
         fireRedirect:true
       })
   })
@@ -60,6 +67,8 @@ export default class EditProfile extends Component {
 
 
   render() {
+  let username = localStorage.getItem('username')
+
   return(
     <div className="login">
        <h1>Create Account Page</h1>
@@ -126,12 +135,6 @@ export default class EditProfile extends Component {
           </label>
           <input type="submit" value="Submit!" />
         </form>
-        {this.state.fireRedirect
-          ? <Redirect push to={{
-              pathname: '/Newsfeed',
-              state: {referrer: this.state.username}
-            }} />
-          : ''}
       </div>
     )
   }
