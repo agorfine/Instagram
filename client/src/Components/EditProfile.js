@@ -31,8 +31,6 @@ export default class EditProfile extends Component {
         profpic: obj.profpic_url,
       })
     }).catch(err => console.log(err));
-      console.log(this.props.match.params.id)
-
   }
 
 
@@ -60,9 +58,12 @@ export default class EditProfile extends Component {
        profpic: this.state.profpic
     }).then(res => {
       this.setState({
+        newId: res.data.data.id,
         fireRedirect:true
       })
   })
+    .catch(err => console.log(err));
+    e.target.reset();
 }
 
 
@@ -135,6 +136,9 @@ export default class EditProfile extends Component {
           </label>
           <input type="submit" value="Submit!" />
         </form>
+        {this.state.fireRedirect
+          ? <Redirect push to={`/profilepage/${username}`}/>
+          : ''}
       </div>
     )
   }
