@@ -37,11 +37,6 @@
   padding-top: 1rem;
 }
 
-.picture {
-  width: 100vw;
-  height: 50vh;
-}
-
 .footer {
   background-color: rgb(250,250,250);
   height: 9vh;
@@ -62,13 +57,31 @@
   height: 7vh;
 }
 
+.notProfile{
+  background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541648665/Screen_Shot_2018-11-07_at_10.39.07_PM.png');
+  background-size: 110%;
+  height: 7.3vh;
+  width: 14vw;
+  /*margin-right: .5rem;*/
+}
+
 .userProfileHome{
   background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541516024/Screen_Shot_2018-11-06_at_9.47.52_AM.png');
   background-size: contain;
+  height: 6vh;
+  width: 14vw;
 }
 
 .homeButtonHome{
   background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541516047/Screen_Shot_2018-11-06_at_9.48.13_AM.png');
   background-size: contain;
+  height: 6vh;
+  width: 14vw;
 }
 
+.noHome{
+  background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541648381/Screen_Shot_2018-11-07_at_10.39.18_PM.png');
+  background-size: 110%;
+  height: 7vh;
+  width: 14vw;
+}

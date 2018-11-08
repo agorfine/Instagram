@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch } from 'react-router-dom';
 import './App.css';
 import './css/login.css'
+import './css/picture.css'
 
 import LogInPage from './components/LogInPage';
 import NewAccount from './components/NewAccount';
