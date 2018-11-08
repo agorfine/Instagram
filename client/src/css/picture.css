@@ -73,3 +73,24 @@
 	flex-direction: row;
 	flex-wrap: wrap
 }
+.userInformationNewsfeed {
+	display: flex;
+	height: 6vh;
+	align-items: center;
+	margin-top:1rem;
+	margin-bottom: .2rem;
+}
+
+.userImg {
+	width: 9vw;
+    height: 5vh;
+    border-radius: 2rem;
+    margin-right: .7rem;
+    margin-left: .5rem;
+}
+
+.usernameTop {
+	margin-right: .5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
