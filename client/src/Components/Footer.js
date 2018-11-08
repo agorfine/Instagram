@@ -15,28 +15,18 @@ class Footer extends Component {
 
 		this.setState(prevState => ({
 			isHome: !this.state.isHome,
-			isProf: !this.state.isProf
+			isProf: !this.state.isProf,
 		}))
 	}
 
-	// homeClick(e) {
-	// 	e.stopPropagation()
-	// 	console.log('inside homeClick')
-
-	// 	this.setState(prevState => ({
-	// 		isHomeNow: !this.state.isHomeNow,
-	// 		isProfNow: !this.state.isProfNow
-	// 	}))
-	// }
 
 	render() {
 
 		let username = localStorage.getItem('username')
 
 		const isHome = (this.state.isHome) ? 'noHome' : 'homeButtonHome'
-		const isProf = (this.state.isHome) ? 'notProfile' : 'userProfileHome'
-		const isHomeNow = (this.state.isHome) ? 'noHome' : 'homeButtonHome'
-		const isProfNow = (this.state.isHome) ? 'userProfileHome' : 'notProfile'
+		const isProf = (this.state.isProf) ? 'userProfileHome' : 'notProfile' 
+	
 
 		return (
 			<div className = 'footer'>
@@ -44,7 +34,8 @@ class Footer extends Component {
        				<div className={isHome}></div>
         		</Link>
       			<img className="button" src="https://res.cloudinary.com/drsaojfyp/image/upload/v1541516078/Screen_Shot_2018-11-06_at_9.48.07_AM.png" alt="Logo" />
-      			<Link to = {`/AddPhoto/${username}`}><img className="button addPhoto" src="https://res.cloudinary.com/drsaojfyp/image/upload/v1541515748/Screen_Shot_2018-11-06_at_9.47.42_AM.png" alt="Camera"/>
+      			<Link to = {`/AddPhoto/${username}`}>
+      				<img className="button addPhoto" src="https://res.cloudinary.com/drsaojfyp/image/upload/v1541515748/Screen_Shot_2018-11-06_at_9.47.42_AM.png" alt="Camera"/>
       			</Link>
       			<img className="button notification" src="https://res.cloudinary.com/drsaojfyp/image/upload/v1541516172/Screen_Shot_2018-11-06_at_9.53.27_AM.png" alt="Camera"/>
       			<Link to={`/profilepage/${username}`} onClick = {(e) => this.handleClick(e)}>
