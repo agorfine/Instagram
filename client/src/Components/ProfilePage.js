@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Picture from './Picture'
+import ProfilePicture from './ProfilePicture'
 import { disableBodyScroll } from 'body-scroll-lock';
 
 class ProfilePage extends Component {
@@ -25,7 +25,7 @@ class ProfilePage extends Component {
     if(this.state.apiDataLoaded) {
       return this.state.apiData.map(d => {
         return(
-          <Picture key={d.id} picture={d} />
+          <ProfilePicture key={d.id} picture={d} />
         )
       })
     } else return <p>Loading...</p>
@@ -35,7 +35,8 @@ class ProfilePage extends Component {
 		return (
 			<div className="newsFeed">
         <div className="scroll">
-			     {this.renderPictures()}
+          <div>user img</div>
+          <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
 			</div>
 		)
