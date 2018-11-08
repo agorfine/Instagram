@@ -11,10 +11,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Due Date | Deliverable | Status
 |:---:|---|---|:---:|
-|Day 1| Nov 5 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | In Progress
-|Day 2| Nov 6 | Basic Functionality: Database, Login to newsfeed, Nav, Footer | Incomplete
-|Day 3| Nov 7 | Newfeed functionality: Render photos, Add photos, Comment, Like | Incomplete
-|Day 4| Nov 8 | Explore Page, Profile Page | Incomplete
+|Day 1| Nov 5 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | Complete
+|Day 2| Nov 6 | Basic Functionality: Database, Login to newsfeed, Nav, Footer | Complete
+|Day 3| Nov 7 | Newfeed functionality: Render photos, Add photos, Comment, Like | In Progress
+|Day 4| Nov 8 | Explore Page, Profile Page | In progress
 |Day 5| Nov 9 | CSS, Problem Sovling, Possibly Post-MVP  | Incomplete
 |Day 6| Nov 12 | Final Touches, Presentation Prep | Incomplete
 |Day 7| Nov 13 | Present | Incomplete
@@ -99,22 +99,24 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| App | H | 3hrs | hrs | hrs |
-| Switcher | H | 3hrs| hrs | hrs |
-| Create User Account | H | 7hrs | hrs | hrs |
-| Login Page | H | 5hrs | hrs | hrs |
-| Database | H | 5hrs| hrs | hrs |
-| Linking Components to DB | H | 10hrs| hrs | hrs |
-| Newsfeed | H | 4hrs | hrs | hrs |
-| Navigation | H | 2hrs | hrs | hrs |
-| Footer | H | 2hrs | hrs | hrs |
-| Add Photo | H | 3hrs | hrs | hrs |
-| Profile Page | L | 5hrs | hrs | hrs |
-| Messages | L | 10hrs | hrs | hrs |
-| Comments | L | 6hrs | hrs | hrs |
-| Git Project Workflow | H | 3hrs | hrs | hrs |
-| | L | ∞hrs | hrs | hrs |
-| Total | H | 68hrs| hrs | hrs |
+| App | H | 3hrs | 2hrs | 2hrs |
+| Switcher | H | 3hrs| 1hrs | 1hrs |
+| Create User Account | H | 7hrs | 3hrs | 3hrs |
+| Login Page/ Authentication | H | 5hrs | 6hrs | 6hrs |
+| Database | H | 5hrs| 3hrs | 3hrs |
+| Linking Components to DB | H | 10hrs| 6hrs | 6hrs |
+| Newsfeed | H | 4hrs | 5hrs | hrs |
+| Navigation | H | 2hrs | 1hrs | hrs |
+| Footer | H | 2hrs | 8hrs | hrs |
+| Add Photo | H | 3hrs | 2hrs | hrs |
+| Profile Page | L | 5hrs | 2.5hrs | hrs |
+| Messages | L | 10hrs | 0hrs | hrs |
+| Comments | L | 6hrs | 0hrs | hrs |
+| Git Project Workflow | H | 3hrs | 2.5hrs | hrs |
+| Wireframing| H | 5hrs | 5hrs | hrs |
+| CSS| H | ∞hrs | 5hrs | hrs |
+| Project Management| H | 2hrs | 2hrs | hrs |
+| Total | H | 68hrs| 52.5hrs | hrs |
 
 
 ## Helper Functions
