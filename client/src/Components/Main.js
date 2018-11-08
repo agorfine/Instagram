@@ -7,7 +7,8 @@ import NewsFeed from './NewsFeed';
 import ProfilePage from './ProfilePage';
 import AddPhoto from './AddPhoto';
 import Explore from './ExplorePage';
-import Comments from './Comments'
+import Comments from './Comments';
+import EditProfile from './EditProfile'
 
 
 class Main extends Component {
@@ -20,6 +21,7 @@ render(){
           <NavBar/>
           <div className="scroll">
             <Switch>
+              <Route path='/EditProfile' component= { EditProfile } />
               <Route path='/Newsfeed' component= { NewsFeed } />
               <Route path='/AddPhoto' component= { AddPhoto } />
               <Route path='/Explore' component= { Explore } />

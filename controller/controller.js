@@ -33,6 +33,7 @@ controller.user = async (req, res) => {
     });
 }
 
+//showing pictures on profile page
 controller.show = (req, res) => {
   Model.findByUsername(req.params.id)
     .then(obj => {
@@ -44,6 +45,7 @@ controller.show = (req, res) => {
     });
 }
 
+//creating a new user
 controller.create = (req, res) => {
   Model.create({
     username: req.body.username,
@@ -63,15 +65,32 @@ controller.create = (req, res) => {
   });
 }
 
+// getting data for edit profile page
+controller.showUserData = (req, res) => {
+  Model.findByUsernameForEdit(req.params.id)
+    .then(obj => {
+      res.json({
+        data: obj,
+      });
+    }).catch(err => {
+      res.status(500).json({err});
+    });
+}
+
+//editing profile
 controller.update = (req, res) => {
   Model.update({
-    name: req.body.name,
-    color: req.body.color
+    username: req.body.username,
+    password: req.body.password,
+    full_name: req.body.full_name,
+    phone: req.body.phone,
+    bio: req.body.bio,
+    profpic_url: req.body.profpic_url
   }, req.params.id)
   .then(model => {
     res.json({
-      message: 'Model updated successfully',
-      data: Model,
+      message: 'profile updated successfully',
+      data: model,
     });
   }).catch(err => {
     console.log(err);
