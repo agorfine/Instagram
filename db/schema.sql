@@ -43,7 +43,7 @@ INSERT INTO pictures VALUES (DEFAULT, 1, 'https://res.cloudinary.com/dvjtpejbw/i
 INSERT INTO pictures VALUES (DEFAULT, 1, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449314/Screenshot_20181105-152100_Instagram.jpg', 'I ❤️ Japan');
 INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537200689/crispy-chocolate-chip-cookies.jpg', '🍪');
 INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449549/Screenshot_20181105-152500_Instagram.jpg', 'caption here');
-INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449655/Snapchat-450742301.jpg', 'caption here');
+INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449794/Screenshot_20181105-152932_Instagram.jpg', 'gotta get to GA!');
 INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537198809/samples/ecommerce/accessories-bag.jpg', 'caption here');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537198810/samples/food/spices.jpg', 'caption here');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449233/Screenshot_20181105-151934_Instagram.jpg', 'caption here');
