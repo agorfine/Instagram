@@ -1,0 +1,75 @@
+.picture {
+  width: 100%;
+  height: auto;
+}
+
+.usernameCaption {
+	display: flex;
+	margin-left: .8rem;
+	font-size: .9rem;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.username {
+	margin-right: .5rem;
+	font-weight: bold;
+}
+
+.actions {
+	display: flex;
+
+}
+
+.noLike {
+	background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541625973/Screen_Shot_2018-11-07_at_4.25.28_PM.png');
+	background-size: contain;
+	height: 2rem;
+	width: 2rem;
+	margin-left: .6rem;
+	margin-top: .4rem;
+	margin-bottom: .2rem;
+}
+
+.liked {
+	background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541627186/Screen_Shot_2018-11-07_at_4.46.09_PM.png');
+	background-size: 120%;
+	height: 2rem;
+	width: 2rem;
+	margin-left: .6rem;
+	margin-top: .3rem;
+	margin-bottom: .2rem;
+}
+
+.commentButton {
+	background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541626523/Screen_Shot_2018-11-07_at_4.25.49_PM.png');
+	background-size: contain;
+	height: 2rem;
+	width: 2rem;
+	margin-left: .6rem;
+	margin-top: .4rem;
+	margin-bottom: .2rem;
+}
+
+.messageButton {
+	background-image: url('https://res.cloudinary.com/drsaojfyp/image/upload/v1541626619/Screen_Shot_2018-11-07_at_4.25.59_PM.png');
+	background-size: contain;
+	height: 2rem;
+	width: 2rem;
+	margin-left: .6rem;
+	margin-top: .4rem;
+	margin-bottom: .2rem;
+}
+
+.profilePic {
+	width: 32.8vw;
+  	height: 16vh;
+  	border-right: .05rem white solid;
+  	border-left: .05rem white solid;
+}
+
+.profilePicGrid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap
+}

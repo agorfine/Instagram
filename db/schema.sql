@@ -47,6 +47,8 @@ INSERT INTO pictures VALUES (DEFAULT, 2, 'https://res.cloudinary.com/dvjtpejbw/i
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537198810/samples/food/spices.jpg', 'caption here');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1541449233/Screenshot_20181105-151934_Instagram.jpg', 'caption here');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://imgur.com/s8TVefK.jpg', 'The Happiest Place on Earth!');
+INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541646730/Screen_Shot_2018-11-07_at_10.10.35_PM.png', 'Gorfine gals ❤️ ');
+INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541646719/Screen_Shot_2018-11-07_at_10.09.40_PM.png', 'Cinderella Castle ready for the Holidays!!!');
 INSERT INTO comments VALUES (DEFAULT, 1, 1, 'SICKKKKK');
 INSERT INTO comments VALUES (DEFAULT, 1, 2, 'youre the cutest');
 INSERT INTO likes VALUES (DEFAULT, 1, 1);
