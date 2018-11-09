@@ -14,8 +14,15 @@ class Picture extends Component {
 		}))
 	}
 
+  // likes(){
+  //    if(this.state.isLike){
+  //     let likes = 0
+  //     console.log(likes + 1)
+  //   }
+  // }
+
 	render () {
-		const isLike = (this.state.isLike) ? 'liked' : 'noLike' 
+		const isLike = (this.state.isLike) ? 'liked' : 'noLike'
 
 		return (
 			<div>
@@ -24,7 +31,7 @@ class Picture extends Component {
 					<div className={`${isLike}`}></div>
 					<div className='commentButton'></div>
 					<div className='messageButton'></div>
-				</div>	
+				</div>
 				<div className='usernameCaption'>
 					<div className="username">{this.props.picture.username}</div>
 					<div>{this.props.picture.caption}</div>

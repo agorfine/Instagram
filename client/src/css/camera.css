@@ -1,0 +1,25 @@
+
+ .preview{
+    position: relative;
+  }
+
+
+  .captureContainer{
+    display: flex;
+    justify-content: center;
+    background: black;
+  }
+
+  .captureButton{
+    background-color: #fff;
+    border-radius: 50%;
+    height: 56;
+    width: 56;
+    color: #000;
+    margin: 20px;
+  }
+
+  .captureImage{
+    width: 100%;
+  }
+
