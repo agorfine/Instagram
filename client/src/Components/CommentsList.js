@@ -52,7 +52,11 @@ export default class comments extends Component{
        user_id: user_id,
        comment: this.state.comment,
     })
+    this.setState({
+      comment:''
+    })
     this.commentRefresh()
+
     // .catch(err => console.log(err));
     // e.target.reset();
 }
