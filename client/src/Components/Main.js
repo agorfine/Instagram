@@ -8,7 +8,8 @@ import ProfilePage from './ProfilePage';
 import AddPhoto from './AddPhoto';
 import Explore from './ExplorePage';
 import CommentsList from './CommentsList';
-import EditProfile from './EditProfile'
+import EditProfile from './EditProfile';
+import WebCam from './WebCam';
 
 
 class Main extends Component {
@@ -24,6 +25,7 @@ render(){
               <Route path='/EditProfile' component= { EditProfile } />
               <Route path='/Newsfeed' component= { NewsFeed } />
               <Route path='/AddPhoto' component= { AddPhoto } />
+              <Route path='/WebCam' component= { WebCam } />
               <Route path='/Explore' component= { Explore } />
               <Route path='/ProfilePage/:id' component = { ProfilePage }/>
               <Route path='/CommentsList' component = { CommentsList } />

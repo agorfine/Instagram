@@ -3,7 +3,7 @@ import Camera from 'react-camera';
 import '../css/camera.css';
 import axios from 'axios';
 
-export default class CameraTest extends Component {
+export default class WebCam extends Component {
    state = {
     picture: null,
     username: ''
