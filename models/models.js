@@ -25,7 +25,7 @@ Model.findUser = (username) => {
 Model.findByUsername = id => {
   return db.query(
     `
-    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username
+    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username, users.profpic_url
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id

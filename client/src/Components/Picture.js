@@ -17,6 +17,7 @@ class Picture extends Component {
 		}))
 	}
 
+
   handleCommentClick(e){
     e.stopPropagation()
     console.log('comment click')
