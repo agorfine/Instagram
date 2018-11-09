@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Camera from 'react-camera';
 import '../css/camera.css';
 import axios from 'axios';
-import saveImage from 'save-image';
 
-export default class CameraTest extends Component {
+
+export default class WebCam extends Component {
+
+
    state = {
     picture: null,
     username: ''
@@ -28,10 +30,20 @@ export default class CameraTest extends Component {
     console.log(this.img)
     await this.setState({
       picture: this.img.src,
+
+  takePicture() {
+    this.camera.capture()
+    .then(blob => {
+      this.img.src = URL.createObjectURL(blob);
+      this.img.onload = () => { URL.revokeObjectURL(this.src); }
+    })
+    this.setState({
+      picture: this.img,
       username: localStorage.getItem('username')
     })
     console.log(this.state.picture)
   }
+
 
   async uploadHandler(){
     const image = document.querySelector('.captureImage')
@@ -39,8 +51,9 @@ export default class CameraTest extends Component {
       axios.post('/pictures', {
         user_id: this.state.username,
         img_file: blob
-      })
     }
+  }
+  
 // <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
   render() {
     return (
@@ -72,3 +85,4 @@ const style = {
     position: 'relative',
   }  
 };
+

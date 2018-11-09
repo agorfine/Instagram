@@ -128,6 +128,23 @@ controller.createComment = (req, res) => {
   });
 }
 
+//posting a new pic
+controller.createPic = (req, res) => {
+  Model.postPic({
+    user_id: req.body.user_id,
+    img_url: req.body.img_url,
+    caption: req.body.img_url,
+  })
+  .then(obj => {
+    res.json({
+      message:'yay new picture!',
+      data: obj,
+    });
+  }).catch(err => {
+    res.status(500).json(err);
+  });
+}
+
 
 controller.destroy = (req, res) => {
   Model.destroy(req.params.id)
