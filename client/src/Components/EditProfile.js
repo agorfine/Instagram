@@ -58,7 +58,7 @@ export default class EditProfile extends Component {
        phone: this.state.phone,
        bio: this.state.bio,
        profpic_url: this.state.profpic_url
-    }) .then(res => {
+    }).then(res => {
         this.setState({
           fireRedirect: true,
         });
