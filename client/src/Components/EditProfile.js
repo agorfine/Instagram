@@ -65,6 +65,11 @@ export default class EditProfile extends Component {
       })
     .catch(err => console.log(err));
     e.target.reset();
+    this.forceUpdate();
+}
+logOut(e){
+    localStorage.removeItem('username')
+    window.location.reload()
 }
 
 
@@ -130,7 +135,9 @@ export default class EditProfile extends Component {
         {this.state.fireRedirect
           ? <Redirect push to={`/profilepage/${username}`}/>
           : ''}
+          <button onClick = {(e) => this.logOut(e)}> LOG OUT</button>
       </div>
+
     )
   }
 }
