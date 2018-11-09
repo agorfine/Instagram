@@ -16,12 +16,12 @@ export default class LogInPage extends Component {
 
   // Do Not delete.  This is our eventual auto refresh login.
 
-  // componentDidMount(){
-  //   const auth = localStorage.getItem('username')
-  //   if (auth){
-  //     window.location.replace('/Main')
-  //   }
-  // }
+  componentDidMount(){
+    const auth = localStorage.getItem('username')
+    if (auth){
+      window.location.replace('/Main')
+    }
+  }
 
 
   handleInputChangeUsername(e){

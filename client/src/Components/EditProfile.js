@@ -58,13 +58,18 @@ export default class EditProfile extends Component {
        phone: this.state.phone,
        bio: this.state.bio,
        profpic_url: this.state.profpic_url
-    }) .then(res => {
+    }).then(res => {
         this.setState({
           fireRedirect: true,
         });
       })
     .catch(err => console.log(err));
     e.target.reset();
+    this.forceUpdate();
+}
+logOut(e){
+    localStorage.removeItem('username')
+    window.location.reload()
 }
 
 
@@ -130,7 +135,9 @@ export default class EditProfile extends Component {
         {this.state.fireRedirect
           ? <Redirect push to={`/profilepage/${username}`}/>
           : ''}
+          <button onClick = {(e) => this.logOut(e)}> LOG OUT</button>
       </div>
+
     )
   }
 }
