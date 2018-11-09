@@ -23,29 +23,32 @@ export default class WebCam extends Component {
     this.camera.capture()
     .then(blob => {
       console.log(blob)
-      theBlob = URL.createObjectURL(blob)
+      theBlob = blob;
       this.img.src = URL.createObjectURL(blob);
       this.img.onload = () => { URL.revokeObjectURL(this.src); }
     })
     console.log(this.img)
     await this.setState({
-      picture: this.img.src,
+      // picture: this.img.src.toString().slice(5),
+      picture: theBlob
     })
 }
 
 
   uploadHandler(e){
+    const user_id = localStorage.getItem('user_id')
     const image = document.querySelector('.captureImage')
     const blob = image.src
       axios.post('/pictures', {
-        user_id: this.state.username,
+        user_id: user_id,
         img_file: blob
     })
+    window.location.replace('/newsfeed')
   }
 
-  
+
 // <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
-  
+
   render() {
     return (
       <div className ='container'>
@@ -74,6 +77,6 @@ export default class WebCam extends Component {
 const style = {
   preview: {
     position: 'relative',
-  }  
+  }
 };
 

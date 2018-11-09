@@ -130,11 +130,11 @@ controller.createComment = (req, res) => {
 
 //posting a new pic
 controller.createPic = (req, res) => {
+  console.log(req.body)
   Model.postPic({
     user_id: req.body.user_id,
-    img_url: req.body.img_url,
+    img_url: req.body.img_file,
   })
-  console.log('this is the body', req.body)
   .then(obj => {
     res.json({
       message:'yay new picture!',

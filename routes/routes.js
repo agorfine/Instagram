@@ -2,9 +2,6 @@ const express = require('express')
 const routes = express.Router()
 const controller = require('../controller/controller')
 
-routes.post('/pictures', (req, res) => {
-	console.log('REQBODY', req.body)
-})
 routes.get('/newsfeed', controller.index);                //route to explore page
 routes.post('/userauth', controller.user);                //route to check login au
 routes.get('/:id', controller.show);                      //route to profile page
