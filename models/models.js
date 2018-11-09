@@ -4,7 +4,7 @@ const Model = {};
 //explorer page
 Model.findAll = () => {
   return db.query(`
-    SELECT pictures.id, pictures.user_id, pictures.img_url, pictures.caption, users.username
+    SELECT pictures.id, pictures.user_id, pictures.img_url, pictures.caption, users.username, users.profpic_url
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id
@@ -25,7 +25,7 @@ Model.findUser = (username) => {
 Model.findByUsername = id => {
   return db.query(
     `
-    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username
+    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username, users.profpic_url
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id
@@ -64,7 +64,7 @@ Model.create = users => {
 Model.findByUsernameForEdit = id => {
 return db.oneOrNone(
     `
-    SELECT username, password, full_name, phone, bio, profpic_url
+    SELECT id, username, password, full_name, phone, bio, profpic_url
     FROM users
     WHERE username = $1
   `,

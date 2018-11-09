@@ -26,6 +26,10 @@ class Picture extends Component {
 
 		return (
 			<div>
+				<div className= 'userInformationNewsfeed'>
+					<img className='userImg' src={this.props.picture.profpic_url} alt="UserImg"/>
+					<div className="usernameTop">{this.props.picture.username}</div>
+				</div>
 				<img className='picture' src={this.props.picture.img_url} alt="Camera" onClick = {(e) => this.handleClick(e)}/>
 				<div className='actions'>
 					<div className={`${isLike}`}></div>

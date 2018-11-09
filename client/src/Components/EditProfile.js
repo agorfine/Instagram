@@ -5,13 +5,13 @@ import {Redirect} from 'react-router-dom';
 
 export default class EditProfile extends Component {
   state = {
-    newId: '',
+    id: '',
     username: '',
     password:'',
     full_name: '',
     phone: '',
     bio: '',
-    profpic: '',
+    profpic_url: '',
     fireRedirect: false
   }
 
@@ -20,7 +20,7 @@ export default class EditProfile extends Component {
 
   axios.get(`/editprofile/${username}`)
     .then((res) => {
-      console.log('this is res: ', res.data.data);
+      // console.log('this is res: ', res.data.data);
       const obj = res.data.data;
       this.setState({
         username: obj.username,
@@ -28,40 +28,38 @@ export default class EditProfile extends Component {
         full_name: obj.full_name,
         phone: obj.phone,
         bio: obj.bio,
-        profpic: obj.profpic_url,
+        profpic_url: obj.profpic_url,
+        id: obj.id
       })
-    }).catch(err => console.log(err));
+    })
+      .catch(err => console.log(err));
+      console.log(this.props.match.params.id)
   }
 
 
-  handleInputChange(e){
-    console.log(e.target.value)
+  async handleInputChange(e){
     const name = e.target.name
     const value = e.target.value
-    this.setState(prevState => ({
+    await this.setState(prevState => ({
        [name]: value
-    }))
+    }));
+    // console.log("this is state: ", this.state)
   }
 
 
   // the event for a form is...onSubmit
   handleFormSubmit(e){
-    let username = localStorage.getItem('username')
-
     e.preventDefault()
-    axios.put(`/editprofile/${username}`, {
+    console.log('SATATE', this.state)
+    const username = localStorage.getItem('username')
+    axios.put(`http://localhost:3001/finsta/editprofile/${username}`, {
        username: this.state.username,
        password: this.state.password,
        full_name: this.state.full_name,
        phone: this.state.phone,
        bio: this.state.bio,
-       profpic: this.state.profpic
-    }).then(res => {
-      this.setState({
-        newId: res.data.data.id,
-        fireRedirect:true
-      })
-  })
+       profpic_url: this.state.profpic_url
+    })
     .catch(err => console.log(err));
     e.target.reset();
 }
@@ -73,7 +71,7 @@ export default class EditProfile extends Component {
   return(
     <div className="login">
        <h1>Create Account Page</h1>
-        <form onSubmit={(e) => this.handleFormSubmit(e)}>
+        <form onSubmit={ (e) => this.handleFormSubmit(e) }>
           <label>
             Username
             <input
@@ -129,8 +127,8 @@ export default class EditProfile extends Component {
             <input
               type="text"
               placeholder="Profile Pic URL"
-              name="profpic"
-              value={this.state.profpic}
+              name="profpic_url"
+              value={this.state.profpic_url}
               onChange={(e) => this.handleInputChange(e)}
             />
           </label>
