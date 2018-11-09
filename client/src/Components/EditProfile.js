@@ -76,16 +76,6 @@ export default class EditProfile extends Component {
        <h1>Create Account Page</h1>
         <form onSubmit={ (e) => this.handleFormSubmit(e) }>
           <label>
-            Username
-            <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              value={this.state.username}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-          </label>
-          <label>
             Password
             <input
               type="password"
