@@ -5,9 +5,9 @@
 
 .usernameCaption {
 	display: flex;
+  flex-direction: column;
 	margin-left: .8rem;
 	font-size: .9rem;
-	align-items: center;
 	margin-bottom: 1rem;
 }
 
@@ -83,14 +83,18 @@
 
 .userImg {
 	width: 9vw;
-    height: 5vh;
-    border-radius: 2rem;
-    margin-right: .7rem;
-    margin-left: .5rem;
+  height: 5vh;
+  border-radius: 2rem;
+  margin-right: .7rem;
+  margin-left: .5rem;
 }
 
 .usernameTop {
 	margin-right: .5rem;
-    font-weight: bold;
-    font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.likesCaptionContainer{
+  display:flex;
 }

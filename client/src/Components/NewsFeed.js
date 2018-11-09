@@ -10,21 +10,20 @@ class NewsFeed extends Component {
 	    apiData: null,
 	  }
 
-  	componentDidMount() {
-    	axios.get('/newsfeed')
-     	.then( res => {
-        this.setState(prevState => ({
-          apiDataLoaded: true,
-          apiData: res.data.data
-        }))
-        console.log(res.data.data)
-      })
-     	this.targetElement = document.querySelector('.scroll')
-     	disableBodyScroll(this.targetElement)
+	componentDidMount() {
+  	axios.get('/newsfeed')
+   	.then( res => {
+      this.setState(prevState => ({
+        apiDataLoaded: true,
+        apiData: res.data.data
+      }))
+      console.log(res.data.data)
+    })
+   	this.targetElement = document.querySelector('.scroll')
+   	disableBodyScroll(this.targetElement)
 	}
 
 	renderPictures() {
-
 		if(this.state.apiDataLoaded) {
 			return this.state.apiData.map(d => {
 				return(
