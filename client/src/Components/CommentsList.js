@@ -12,7 +12,20 @@ export default class comments extends Component{
     }
 
   componentDidMount() {
-  const picture_id = localStorage.getItem('picture_id')
+    this.commentRefresh()
+  }
+
+   async handleInputChange(e){
+    const name = e.target.name
+    const value = e.target.value
+    await this.setState(prevState => ({
+       [name]: value
+    }));
+    // console.log("this is state: ", this.state)
+  }
+
+  commentRefresh(){
+    const picture_id = localStorage.getItem('picture_id')
 
   axios.get(`/comments/${picture_id}`)
     .then((res) => {
@@ -28,14 +41,6 @@ export default class comments extends Component{
       console.log('this is state: ', this.state)
   }
 
-   async handleInputChange(e){
-    const name = e.target.name
-    const value = e.target.value
-    await this.setState(prevState => ({
-       [name]: value
-    }));
-    // console.log("this is state: ", this.state)
-  }
 
   handleFormSubmit(e){
     e.preventDefault()
@@ -47,6 +52,7 @@ export default class comments extends Component{
        user_id: user_id,
        comment: this.state.comment,
     })
+    this.commentRefresh()
     // .catch(err => console.log(err));
     // e.target.reset();
 }
