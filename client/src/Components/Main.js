@@ -7,7 +7,7 @@ import NewsFeed from './NewsFeed';
 import ProfilePage from './ProfilePage';
 import AddPhoto from './AddPhoto';
 import Explore from './ExplorePage';
-import Comments from './Comments';
+import CommentsList from './CommentsList';
 import EditProfile from './EditProfile'
 
 
@@ -26,7 +26,7 @@ render(){
               <Route path='/AddPhoto' component= { AddPhoto } />
               <Route path='/Explore' component= { Explore } />
               <Route path='/ProfilePage/:id' component = { ProfilePage }/>
-              <Route path='/Comments' component = { Comments } />
+              <Route path='/CommentsList' component = { CommentsList } />
               <Route path='/Main' component={ NewsFeed } />
             </Switch>
           </div>
