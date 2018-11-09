@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+Wimport React, { Component } from 'react';
 import Camera from 'react-camera';
 import '../css/camera.css';
 import axios from 'axios';
@@ -16,7 +16,7 @@ export default class CameraTest extends Component {
       this.img.onload = () => { URL.revokeObjectURL(this.src); }
     })
     this.setState({
-      picture: this.img.src,
+      picture: this.img,
       username: localStorage.getItem('username')
     })
     console.log(this.state.picture)
@@ -33,7 +33,6 @@ export default class CameraTest extends Component {
     return (
       <div className ='container'>
         <Camera
-          style={style.preview}
           className ='preview'
           ref={(cam) => {
             this.camera = cam;
@@ -46,16 +45,9 @@ export default class CameraTest extends Component {
         </div>
          <img
           className ='captureImage'
-          onClick ={() => this.uploadHandler()}
           ref={(img) => {this.img = img;}}
         />
       </div>
     );
   }
 }
-
-const style = {
-  preview: {
-    position: 'relative',
-  }  
-};
