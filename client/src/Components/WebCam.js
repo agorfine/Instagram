@@ -30,31 +30,22 @@ export default class WebCam extends Component {
     console.log(this.img)
     await this.setState({
       picture: this.img.src,
-
-  takePicture() {
-    this.camera.capture()
-    .then(blob => {
-      this.img.src = URL.createObjectURL(blob);
-      this.img.onload = () => { URL.revokeObjectURL(this.src); }
     })
-    this.setState({
-      picture: this.img,
-      username: localStorage.getItem('username')
-    })
-    console.log(this.state.picture)
-  }
+}
 
 
-  async uploadHandler(){
+  uploadHandler(e){
     const image = document.querySelector('.captureImage')
     const blob = image.src
       axios.post('/pictures', {
         user_id: this.state.username,
         img_file: blob
-    }
+    })
   }
+
   
 // <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
+  
   render() {
     return (
       <div className ='container'>
