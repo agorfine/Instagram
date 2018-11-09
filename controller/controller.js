@@ -133,8 +133,8 @@ controller.createPic = (req, res) => {
   Model.postPic({
     user_id: req.body.user_id,
     img_url: req.body.img_url,
-    caption: req.body.img_url,
   })
+  console.log('this is the body', req.body)
   .then(obj => {
     res.json({
       message:'yay new picture!',
