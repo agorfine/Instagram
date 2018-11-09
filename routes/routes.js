@@ -7,8 +7,9 @@ routes.post('/userauth', controller.user);                //route to check login
 routes.get('/:id', controller.show);                      //route to profile page
 routes.get('/editprofile/:id', controller.showUserData);  //route to editprofile, getting data
 routes.put('/editprofile/:id', controller.update);        //route to editprofile, posting data
-routes.get('/comments/:id', controller.showComments);    //route to comments, using piture_id
-routes.post('/comments/:id', controller.createComment);    //route to post comments
+routes.get('/comments/:id', controller.showComments);     //route to comments, using piture_id
+routes.post('/comments/:id', controller.createComment);   //route to post comments
+routes.post('/pictures', controller.createPic)            //route to post new photo
 routes.post('/', controller.create);                      //route to create new account page
 routes.delete('/:id', controller.destroy);
 
