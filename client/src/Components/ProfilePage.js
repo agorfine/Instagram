@@ -47,8 +47,10 @@ class ProfilePage extends Component {
 		return (
 			<div className="newsFeed">
         <div className="scroll">
-          <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
-          <Link to = {`/editprofile/${username}`}><div> edit profile </div></Link>
+          <div className='profHead'>
+              <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
+              <Link to = {`/editprofile/${username}`}><div> edit profile </div></Link>
+          </div>    
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
 			</div>

@@ -5,3 +5,21 @@
     margin-right: .7rem;
     margin-left: .5rem;
 }
+
+.profHead {
+	display: flex;
+	height: auto;
+}
+
+.profilePic {
+	width: 32.8vw;
+  	height: 16vh;
+  	border-right: .05rem white solid;
+  	border-left: .05rem white solid;
+}
+
+.profilePicGrid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap
+}
