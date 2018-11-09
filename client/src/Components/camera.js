@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Camera from 'react-camera';
 import '../css/camera.css';
 import axios from 'axios';
+import saveImage from 'save-image';
 
 export default class CameraTest extends Component {
    state = {
@@ -9,23 +10,35 @@ export default class CameraTest extends Component {
     username: ''
    }
 
-  takePicture() {
+   componentDidUpdate(prevProps, prevState) {
+    if(prevState.picture !== this.state.picture) {
+      console.log(this.state.picture)
+    }
+   }
+
+  async takePicture() {
+    let theBlob;
     this.camera.capture()
     .then(blob => {
+      console.log(blob)
+      theBlob = URL.createObjectURL(blob)
       this.img.src = URL.createObjectURL(blob);
       this.img.onload = () => { URL.revokeObjectURL(this.src); }
     })
-    this.setState({
+    console.log(this.img)
+    await this.setState({
       picture: this.img.src,
       username: localStorage.getItem('username')
     })
     console.log(this.state.picture)
   }
 
-  uploadHandler(){
+  async uploadHandler(){
+    const image = document.querySelector('.captureImage')
+    const blob = image.src
       axios.post('/pictures', {
         user_id: this.state.username,
-        img_file: this.state.picture
+        img_file: blob
       })
     }
 // <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
@@ -46,7 +59,7 @@ export default class CameraTest extends Component {
         </div>
          <img
           className ='captureImage'
-          onClick ={() => this.uploadHandler()}
+          onClick ={(e) => this.uploadHandler(e)}
           ref={(img) => {this.img = img;}}
         />
       </div>
