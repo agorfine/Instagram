@@ -51,7 +51,7 @@ INSERT INTO pictures VALUES (DEFAULT, 3, 'https://imgur.com/s8TVefK.jpg', 'The H
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541646730/Screen_Shot_2018-11-07_at_10.10.35_PM.png', 'Gorfine gals ❤️ ');
 INSERT INTO pictures VALUES (DEFAULT, 3, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541646719/Screen_Shot_2018-11-07_at_10.09.40_PM.png', 'Cinderella Castle ready for the Holidays!!!');
 INSERT INTO comments VALUES (DEFAULT, 1, 1, 'SICKKKKK');
-INSERT INTO comments VALUES (DEFAULT, 1, 2, 'youre the cutest');
+INSERT INTO comments VALUES (DEFAULT, 9, 2, 'youre the cutest');
 INSERT INTO likes VALUES (DEFAULT, 1, 1);
 INSERT INTO likes VALUES (DEFAULT, 1, 2);
 INSERT INTO likes VALUES (DEFAULT, 1, 3);

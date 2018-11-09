@@ -23,14 +23,11 @@ class Picture extends Component {
     console.log('comment click')
 
     localStorage.setItem('picture_id', this.props.picture.id)
-    console.log('this is picture id on click', this.props.picture.id)
 
   }
 
 	render () {
 		const isLike = (this.state.isLike) ? 'liked' : 'noLike'
-    const picture_id = localStorage.getItem('picture_id')
-    console.log('this is pictureid in render: ', picture_id)
 
 		return (
 			<div>

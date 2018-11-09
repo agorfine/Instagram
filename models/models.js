@@ -12,7 +12,7 @@ Model.findAll = () => {
   `)
 }
 
-//newsfeed after login????
+//newsfeed after login
 Model.findUser = (username) => {
   return db.query(`
     SELECT *
@@ -25,7 +25,7 @@ Model.findUser = (username) => {
 Model.findByUsername = id => {
   return db.query(
     `
-    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.username, users.profpic_url
+    SELECT pictures.id AS pic_id, pictures.img_url, pictures.caption, users.id AS user_id, users.username, users.profpic_url
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id
@@ -94,7 +94,7 @@ Model.update = (users, id) => {
 Model.findComments = (picture_id) => {
   return db.query(
     `
-    SELECT comments.picture_id, comments.comment, users.username
+    SELECT comments.id, comments.picture_id, comments.comment, comments.user_id, users.username
     FROM comments
     JOIN users
     ON comments.user_id = users.id
@@ -102,6 +102,19 @@ Model.findComments = (picture_id) => {
   , [picture_id]
   )
 }
+
+//post a new comment for a photo
+Model.postComment = comments => {
+  return db.one(
+    `
+    INSERT INTO comments
+    (picture_id, user_id, comment)
+    VALUES ($1, $2, $3)
+    RETURNING *
+  `,
+    [comments.picture_id, comments.user_id, comments.comment]
+  );
+};
 
 Model.destroy = id => {
   return db.none(
