@@ -8,7 +8,7 @@ Model.findAll = () => {
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id
-    ORDER BY pictures.id ASC;
+    ORDER BY pictures.id DESC;
   `)
 }
 
@@ -113,6 +113,19 @@ Model.postComment = comments => {
     RETURNING *
   `,
     [comments.picture_id, comments.user_id, comments.comment]
+  );
+};
+
+//posting a new picture
+Model.postPic = pictures => {
+  return db.one(
+    `
+    INSERT INTO pictures
+    (user_id, img_url, caption)
+    VALUES ($1, $2, $3
+    RETURNING *
+  `,
+    [pictures.user_id, pictures.img_url, pictures.caption]
   );
 };
 

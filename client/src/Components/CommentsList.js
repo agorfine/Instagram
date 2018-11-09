@@ -42,7 +42,7 @@ export default class comments extends Component{
     // console.log('STATE', this.state)
     const picture_id = localStorage.getItem('picture_id')
     const user_id = localStorage.getItem('user_id')
-    axios.post(`http://localhost:3001/finsta/comments/${picture_id}`, {
+    axios.post(`comments/${picture_id}`, {
        picture_id: picture_id,
        user_id: user_id,
        comment: this.state.comment,
