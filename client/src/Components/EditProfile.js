@@ -33,7 +33,6 @@ export default class EditProfile extends Component {
       })
     })
       .catch(err => console.log(err));
-      console.log(this.props.match.params.id)
   }
 
 
@@ -52,14 +51,18 @@ export default class EditProfile extends Component {
     e.preventDefault()
     console.log('SATATE', this.state)
     const username = localStorage.getItem('username')
-    axios.put(`http://localhost:3001/finsta/editprofile/${username}`, {
+    axios.put(`/editprofile/${username}`, {
        username: this.state.username,
        password: this.state.password,
        full_name: this.state.full_name,
        phone: this.state.phone,
        bio: this.state.bio,
        profpic_url: this.state.profpic_url
-    })
+    }) .then(res => {
+        this.setState({
+          fireRedirect: true,
+        });
+      })
     .catch(err => console.log(err));
     e.target.reset();
 }

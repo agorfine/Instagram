@@ -79,7 +79,7 @@ controller.showUserData = (req, res) => {
 
 //editing profile
 controller.update = (req, res) => {
-  console.log('this is req: ', req.body)
+  // console.log('this is req: ', req.body)
   Model.update({
     username: req.body.username,
     password: req.body.password,
@@ -98,6 +98,19 @@ controller.update = (req, res) => {
     res.status(500).json(err);
   });
 }
+
+//getting comments for a picture
+controller.showComments = (req, res) => {
+  Model.findComments(req.params.id)
+    .then(obj => {
+      res.json({
+        data: obj,
+      });
+    }).catch(err => {
+      res.status(500).json({err});
+    })
+}
+
 
 controller.destroy = (req, res) => {
   Model.destroy(req.params.id)

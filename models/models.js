@@ -8,7 +8,7 @@ Model.findAll = () => {
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id
-    ORDER BY pictures.id DESC;
+    ORDER BY pictures.id ASC;
   `)
 }
 
@@ -89,6 +89,19 @@ Model.update = (users, id) => {
     [users.username, users.password, users.full_name, users.phone, users.bio, users.profpic_url]
   );
 };
+
+//get comments for a photo
+Model.findComments = (picture_id) => {
+  return db.query(
+    `
+    SELECT comments.picture_id, comments.comment, users.username
+    FROM comments
+    JOIN users
+    ON comments.user_id = users.id
+    WHERE picture_id = $1 `
+  , [picture_id]
+  )
+}
 
 Model.destroy = id => {
   return db.none(

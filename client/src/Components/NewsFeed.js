@@ -28,7 +28,7 @@ class NewsFeed extends Component {
 		if(this.state.apiDataLoaded) {
 			return this.state.apiData.map(d => {
 				return(
-					<Picture key ={d.id} picture={d} />
+					<Picture key ={d.id} picture={d}/>
 				)
 			})
 		} else return <p>Loading...</p>
