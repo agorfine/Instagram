@@ -6,10 +6,30 @@ import axios from 'axios';
 
 export default class WebCam extends Component {
 
+
    state = {
     picture: null,
     username: ''
    }
+
+   componentDidUpdate(prevProps, prevState) {
+    if(prevState.picture !== this.state.picture) {
+      console.log(this.state.picture)
+    }
+   }
+
+  async takePicture() {
+    let theBlob;
+    this.camera.capture()
+    .then(blob => {
+      console.log(blob)
+      theBlob = URL.createObjectURL(blob)
+      this.img.src = URL.createObjectURL(blob);
+      this.img.onload = () => { URL.revokeObjectURL(this.src); }
+    })
+    console.log(this.img)
+    await this.setState({
+      picture: this.img.src,
 
   takePicture() {
     this.camera.capture()
@@ -24,17 +44,22 @@ export default class WebCam extends Component {
     console.log(this.state.picture)
   }
 
-  uploadHandler(){
+
+  async uploadHandler(){
+    const image = document.querySelector('.captureImage')
+    const blob = image.src
       axios.post('/pictures', {
         user_id: this.state.username,
-        img_file: this.state.picture
-      })
+        img_file: blob
     }
+  }
+  
 // <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
   render() {
     return (
       <div className ='container'>
         <Camera
+          style={style.preview}
           className ='preview'
           ref={(cam) => {
             this.camera = cam;
@@ -47,9 +72,17 @@ export default class WebCam extends Component {
         </div>
          <img
           className ='captureImage'
+          onClick ={(e) => this.uploadHandler(e)}
           ref={(img) => {this.img = img;}}
         />
       </div>
     );
   }
 }
+
+const style = {
+  preview: {
+    position: 'relative',
+  }  
+};
+
