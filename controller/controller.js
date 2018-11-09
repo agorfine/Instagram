@@ -22,7 +22,7 @@ controller.user = async (req, res) => {
         data = { data: 'no user' }
       }
       if (req.body.password === obj[0].password){
-        data = { data: 'good pass', user: obj[0].username }
+        data = { data: 'good pass', user: obj[0].username, user_id:obj[0].id }
       } else {
         data = { data: 'bad pass' }
       }
@@ -109,6 +109,23 @@ controller.showComments = (req, res) => {
     }).catch(err => {
       res.status(500).json({err});
     })
+}
+
+//posting a new comment for a picture
+controller.createComment = (req, res) => {
+  Model.postComment({
+    picture_id: req.body.picture_id,
+    user_id: req.body.user_id,
+    comment: req.body.comment,
+  })
+  .then(obj => {
+    res.json({
+      message:'yay new comment!',
+      data: obj,
+    });
+  }).catch(err => {
+    res.status(500).json(err);
+  });
 }
 
 
