@@ -1,25 +1,27 @@
 
- .preview{
-    position: relative;
-  }
+
 
 
   .captureContainer{
     display: flex;
     justify-content: center;
-    background: black;
   }
 
   .captureButton{
+    position: relative;
     background-color: #fff;
-    border-radius: 50%;
-    height: 56;
-    width: 56;
-    color: #000;
-    margin: 20px;
+    height: 56px;
+
   }
 
   .captureImage{
     width: 100%;
+  }
+
+  button{
+    width: 200px;
+    font-weight: 100px;
+    border: 1px solid;
+    margin: 10px 0px;
   }
 

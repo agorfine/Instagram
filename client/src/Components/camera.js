@@ -28,7 +28,7 @@ export default class CameraTest extends Component {
         img_file: this.state.picture
       })
     }
-
+// <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
   render() {
     return (
       <div className ='container'>
@@ -38,15 +38,15 @@ export default class CameraTest extends Component {
             this.camera = cam;
           }}
         >
-          <div className ='captureContainer' onClick={() => this.takePicture()}>
-            <div className ='captureButton' />
-          </div>
         </Camera>
-        <img
+
+          <div className ='captureContainer' onClick={() => this.takePicture()}>
+            <button className ='captureButton'> CAPTURE </button>
+        </div>
+         <img
           className ='captureImage'
           ref={(img) => {this.img = img;}}
         />
-        <button onClick ={() => this.uploadHandler()}> SEND TO PSQL </button>
       </div>
     );
   }
