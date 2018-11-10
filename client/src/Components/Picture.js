@@ -6,8 +6,6 @@ class Picture extends Component {
 		isLike: false
 	}
 
-
-
 	handleClick(e) {
 		e.stopPropagation()
 		console.log('inside handleClick')
@@ -17,13 +15,11 @@ class Picture extends Component {
 		}))
 	}
 
-
   handleCommentClick(e){
     e.stopPropagation()
     console.log('comment click')
 
     localStorage.setItem('picture_id', this.props.picture.id)
-
   }
 
 	render () {
@@ -42,8 +38,11 @@ class Picture extends Component {
 					<div className='messageButton'></div>
 				</div>
 				<div className='usernameCaption'>
-					<div className="username">{this.props.picture.username}</div>
-					<div>{this.props.picture.caption}</div>
+          <div className="username">{(Math.random()*100).toFixed(2)} Likes</div>
+					<div className="likesCaptionContainer">
+            <div className="username">{this.props.picture.username}</div>
+  					<div>{this.props.picture.caption}</div>
+          </div>
 				</div>
 			</div>
 		)
