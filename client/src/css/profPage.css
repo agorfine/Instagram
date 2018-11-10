@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'font medium';
+  src: url('../font/Metropolis-Medium.otf') format('opentype');
+}
+
 .userImgProfPage {
     width: 24vw;
     height: auto;
@@ -9,6 +14,13 @@
 .profHead {
 	display: flex;
 	height: 13vh;
+  align-items: center;
+  justify-content: 
+}
+
+.top {
+  height: 22vh;
+  padding-top: .7rem;
 }
 
 .profilePic {
@@ -17,6 +29,36 @@
   	border-right: .05rem white solid;
   	border-left: .05rem white solid;
 }
+
+.edit{
+  text-decoration: none;
+  text-align: center;
+  width: 60vw;
+}
+
+.editThis{
+  border: .05rem gainsboro solid;
+  color: black;
+  padding: .3rem;
+  border-radius: .2rem;
+  font-size: .8rem;
+  margin-left: 1rem;
+}
+
+.name {
+  margin-top: 1rem;
+  padding-left: .8rem;
+  font-size: .8rem;
+  font-family: font medium;
+
+}
+
+.bio {
+  margin-top: .2rem;
+  padding-left: .8rem;
+  font-size: .8rem
+}
+
 
 .profilePicGrid {
 	display: flex;
