@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
 
 class Picture extends Component {
 	state = {
-		isLike: false
+		isLike: false,
+    likes:''
 	}
 
-	handleClick(e) {
-		e.stopPropagation()
-		console.log('inside handleClick')
+  componentDidMount(){
+    this.likesCounter()
+  }
 
+	async handleClick(e) {
+		e.stopPropagation()
+		const user_id = localStorage.getItem('user_id')
+    console.log('inside handleClick')
+    axios.post('/like', {
+       picture_id: this.props.picture.id,
+       user_id: user_id,
+    })
 		this.setState(prevState => ({
 			isLike: !prevState.isLike
 		}))
+    await this.likesCounter()
 	}
 
   handleCommentClick(e){
@@ -20,6 +32,19 @@ class Picture extends Component {
     console.log('comment click')
 
     localStorage.setItem('picture_id', this.props.picture.id)
+  }
+
+  likesCounter() {
+    axios.get(`http://localhost:3001/finsta/like/${this.props.picture.id}`)
+    .then((res) => {
+      const data = res.data.data;
+      this.setState({
+        likes: data.length,
+      })
+      console.log(res.data.data)
+    })
+      .catch(err => console.log(err));
+      console.log('this is state: ', this.state)
   }
 
 	render () {
@@ -38,7 +63,7 @@ class Picture extends Component {
 					<div className='messageButton'></div>
 				</div>
 				<div className='usernameCaption'>
-          <div className="username">{(Math.random()*100).toFixed(2)} Likes</div>
+          <Link className="username" to={`/likes`}>{this.state.likes} Likes</Link>
 					<div className="likesCaptionContainer">
             <div className="username">{this.props.picture.username}</div>
   					<div>{this.props.picture.caption}</div>

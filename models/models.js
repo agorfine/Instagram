@@ -94,7 +94,7 @@ Model.update = (users, id) => {
 Model.findComments = (picture_id) => {
   return db.query(
     `
-    SELECT comments.id, comments.picture_id, comments.comment, comments.user_id, users.username
+    SELECT comments.id, comments.picture_id, comments.comment, comments.user_id, users.username, users.profpic_url
     FROM comments
     JOIN users
     ON comments.user_id = users.id
@@ -121,13 +121,39 @@ Model.postPic = pictures => {
   return db.one(
     `
     INSERT INTO pictures
-    (user_id, img_url)
+    (user_id, img_url, img_file)
+    VALUES ($1, $2, $3)
+    RETURNING *
+  `,
+    [pictures.user_id, pictures.img_url, pictures.img_file]
+  );
+};
+
+//liking a photo
+Model.like = like => {
+  return db.one(
+    `
+    INSERT INTO likes
+    (picture_id, user_id)
     VALUES ($1, $2)
     RETURNING *
   `,
-    [pictures.user_id, pictures.img_url]
+    [like.picture_id, like.user_id]
   );
 };
+
+// showing number of likes
+Model.numberLikes = (picture_id) => {
+  return db.query(
+    `
+    SELECT likes.id, likes.picture_id, likes.user_id, users.username, users.full_name
+    FROM likes
+    JOIN users
+    ON likes.user_id = users.id
+    WHERE picture_id = $1 `
+  , [picture_id]
+  )
+}
 
 Model.destroy = id => {
   return db.none(
