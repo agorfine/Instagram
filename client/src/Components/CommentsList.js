@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
 import Comment from './Comment'
 
 export default class comments extends Component{
@@ -27,7 +26,7 @@ export default class comments extends Component{
   commentRefresh(){
     const picture_id = localStorage.getItem('picture_id')
 
-  axios.get(`/comments/${picture_id}`)
+    axios.get(`/comments/${picture_id}`)
     .then((res) => {
       console.log('this is res: ', res.data.data);
       console.log('this is state: ', this.state)
@@ -59,7 +58,7 @@ export default class comments extends Component{
 
     // .catch(err => console.log(err));
     // e.target.reset();
-}
+  }
 
   renderComments() {
       console.log('this is state: ',this.state)
@@ -77,7 +76,7 @@ export default class comments extends Component{
       <div >
         <div className="commentsList">
           {this.renderComments()}
-        </div >
+        </div>
         <div className="commentField">
           <input
           type="text"

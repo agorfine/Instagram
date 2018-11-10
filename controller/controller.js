@@ -146,6 +146,34 @@ controller.createPic = (req, res) => {
   });
 }
 
+//liking a photo
+controller.like = (req, res) => {
+  Model.like({
+    user_id: req.body.user_id,
+    picture_id: req.body.picture_id
+  })
+  .then(obj => {
+    res.json({
+      message:'yay you liked a photo!',
+      data: obj,
+    });
+  }).catch(err => {
+    res.status(500).json(err);
+  });
+}
+
+//get number of likes for a photo
+controller.numberLikes = (req, res) => {
+  Model.numberLikes(req.params.id)
+    .then(obj => {
+      res.json({
+        data: obj,
+      });
+    }).catch(err => {
+      res.status(500).json({err});
+    })
+}
+
 
 controller.destroy = (req, res) => {
   Model.destroy(req.params.id)

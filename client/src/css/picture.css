@@ -95,6 +95,10 @@
   font-size: 0.9rem;
 }
 
+.likesCaptionContainer{
+  display: flex;
+}
+
 .commentsList{
   height: 74vh;
   overflow: scroll;

@@ -129,6 +129,32 @@ Model.postPic = pictures => {
   );
 };
 
+//liking a photo
+Model.like = like => {
+  return db.one(
+    `
+    INSERT INTO likes
+    (picture_id, user_id)
+    VALUES ($1, $2)
+    RETURNING *
+  `,
+    [like.picture_id, like.user_id]
+  );
+};
+
+// showing number of likes
+Model.numberLikes = (picture_id) => {
+  return db.query(
+    `
+    SELECT likes.id, likes.picture_id, likes.user_id, users.username, users.full_name
+    FROM likes
+    JOIN users
+    ON likes.user_id = users.id
+    WHERE picture_id = $1 `
+  , [picture_id]
+  )
+}
+
 Model.destroy = id => {
   return db.none(
     `
