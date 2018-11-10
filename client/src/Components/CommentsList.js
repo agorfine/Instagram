@@ -74,18 +74,20 @@ export default class comments extends Component{
 
   render(){
     return(
-      <div>
-        <div>
+      <div >
+        <div className="commentsList">
           {this.renderComments()}
+        </div >
+        <div className="commentField">
+          <input
+          type="text"
+                placeholder="Add a comment..."
+                name="comment"
+                value={this.state.comment}
+                onChange={(e) => this.handleInputChange(e)}
+          />
+          <input type="submit" value="Post" onClick={(e) => this.handleFormSubmit(e)} />
         </div>
-        <input
-        type="text"
-              placeholder="Add a comment..."
-              name="comment"
-              value={this.state.comment}
-              onChange={(e) => this.handleInputChange(e)}
-        />
-        <input type="submit" value="Post" onClick={(e) => this.handleFormSubmit(e)} />
       </div>
     )
   }

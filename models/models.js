@@ -94,7 +94,7 @@ Model.update = (users, id) => {
 Model.findComments = (picture_id) => {
   return db.query(
     `
-    SELECT comments.id, comments.picture_id, comments.comment, comments.user_id, users.username
+    SELECT comments.id, comments.picture_id, comments.comment, comments.user_id, users.username, users.profpic_url
     FROM comments
     JOIN users
     ON comments.user_id = users.id
@@ -121,11 +121,11 @@ Model.postPic = pictures => {
   return db.one(
     `
     INSERT INTO pictures
-    (user_id, img_url)
-    VALUES ($1, $2)
+    (user_id, img_url, img_file)
+    VALUES ($1, $2, $3)
     RETURNING *
   `,
-    [pictures.user_id, pictures.img_url]
+    [pictures.user_id, pictures.img_url, pictures.img_file]
   );
 };
 

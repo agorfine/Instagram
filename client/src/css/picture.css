@@ -95,6 +95,21 @@
   font-size: 0.9rem;
 }
 
-.likesCaptionContainer{
+.commentsList{
+  height: 74vh;
+  overflow: scroll;
+}
+
+.commentContainer{
+  display: flex;
+  padding: 1rem;
+}
+
+.commentField{
+  height: 8vh;
   display:flex;
+  justify-content: space-between;
+  padding: 0 4vw;
+  position: relative;
+  border-top: .5px solid gray;
 }
