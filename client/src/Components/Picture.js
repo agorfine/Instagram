@@ -38,7 +38,7 @@ class Picture extends Component {
 					<div className='messageButton'></div>
 				</div>
 				<div className='usernameCaption'>
-          <div className="username">{(Math.random()*100).toFixed(2)} Likes</div>
+          <div className="username">{Math.floor((Math.random()*100))} Likes</div>
 					<div className="likesCaptionContainer">
             <div className="username">{this.props.picture.username}</div>
   					<div>{this.props.picture.caption}</div>
