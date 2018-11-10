@@ -35,7 +35,7 @@ CREATE TABLE likes (
   user_id INT NOT NULL
 );
 
-INSERT INTO users VALUES (DEFAULT, 'rossi', 'password', 'Valentino Rossi', null, null, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541704107/rossface.jpg');
+INSERT INTO users VALUES (DEFAULT, 'rossi', 'password', 'Valentino Rossi', null, 'I love coding!', 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541704107/rossface.jpg');
 INSERT INTO users VALUES (DEFAULT, 'lilC', 'password', 'Cynthia ', null, null, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541704141/0.jpg');
 INSERT INTO users VALUES (DEFAULT, 'uhmandur', 'password', 'Amanda', null, null, 'https://res.cloudinary.com/drsaojfyp/image/upload/v1541696663/fullsizeoutput_2537.jpg');
 INSERT INTO pictures VALUES (DEFAULT, 1, 'https://res.cloudinary.com/dvjtpejbw/image/upload/v1537198809/samples/ecommerce/accessories-bag.jpg', 'love everything I got in my box!!!!');
