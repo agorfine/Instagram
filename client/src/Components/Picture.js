@@ -65,9 +65,9 @@ class Picture extends Component {
 				<div className='usernameCaption'>
           <Link className="username" to={`/likes`}>{this.state.likes} Likes</Link>
 					<div className="likesCaptionContainer">
-            <div className="username">{this.props.picture.username}</div>
+            		<div className="username">{this.props.picture.username}</div>
   					<div>{this.props.picture.caption}</div>
-          </div>
+          		</div>
 				</div>
 			</div>
 		)

@@ -39,6 +39,18 @@ class ProfilePage extends Component {
     } else return <p>Loading...</p>
   }
 
+  renderUserName() {
+      if(this.state.apiDataLoaded) {
+        return this.state.apiData[0].full_name
+      } else return <p>Loading...</p>
+    }
+
+  renderUserBio() {
+      if(this.state.apiDataLoaded) {
+        console.log(this.state.apiData[0].bio)
+        return this.state.apiData[0].bio
+      } else return <p>Loading...</p>
+    }
 
 	render () {
 
@@ -47,10 +59,14 @@ class ProfilePage extends Component {
 		return (
 			<div className="newsFeed">
         <div className="scroll">
-          <div className='profHead'>
-              <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
-              <Link to = {`/editprofile/${username}`}><div> edit profile </div></Link>
-          </div>    
+          <div className='top'>  
+            <div className='profHead'>
+                <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
+                <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
+            </div>    
+            <div className='name'>{this.renderUserName()}</div>
+            <div className='bio'>{this.renderUserBio()}</div>
+          </div>
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
 			</div>
