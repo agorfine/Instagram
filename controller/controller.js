@@ -133,7 +133,8 @@ controller.createPic = (req, res) => {
   console.log(req.body)
   Model.postPic({
     user_id: req.body.user_id,
-    img_url: req.body.img_file,
+    img_url: req.body.url,
+    img_file: req.body.img_file
   })
   .then(obj => {
     res.json({
@@ -143,6 +144,34 @@ controller.createPic = (req, res) => {
   }).catch(err => {
     res.status(500).json(err);
   });
+}
+
+//liking a photo
+controller.like = (req, res) => {
+  Model.like({
+    user_id: req.body.user_id,
+    picture_id: req.body.picture_id
+  })
+  .then(obj => {
+    res.json({
+      message:'yay you liked a photo!',
+      data: obj,
+    });
+  }).catch(err => {
+    res.status(500).json(err);
+  });
+}
+
+//get number of likes for a photo
+controller.numberLikes = (req, res) => {
+  Model.numberLikes(req.params.id)
+    .then(obj => {
+      res.json({
+        data: obj,
+      });
+    }).catch(err => {
+      res.status(500).json({err});
+    })
 }
 
 
