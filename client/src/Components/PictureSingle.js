@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 
-class Picture extends Component {
+class PictureSingle extends Component {
 	state = {
 		isLike: false,
     	likes:''
@@ -34,6 +34,11 @@ class Picture extends Component {
     localStorage.setItem('picture_id', this.props.picture.id)
   }
 
+  handleClick(e) {
+    e.stopPropagation()
+    console.log('inside deleteClick')
+  }
+
   likesCounter() {
     axios.get(`http://localhost:3001/finsta/like/${this.props.picture.id}`)
     .then((res) => {
@@ -53,10 +58,13 @@ class Picture extends Component {
 
 		return (
 			<div>
-				<div className= 'userInformationNewsfeed'>
-					<img className='userImg' src={this.props.picture.profpic_url} alt="UserImg"/>
-					<div className="usernameTop">{this.props.picture.username}</div>
-				</div>
+				<div className='headofpic'>
+					<div className= 'userInformationNewsfeed'>
+						<img className='userImg' src={this.props.picture.profpic_url} alt="UserImg"/>
+						<div className="usernameTop">{this.props.picture.username}</div>
+					</div>
+					<div className='delete' onClick = {(e) => this.handleClick(e)}></div>
+				</div>	
 				<img className='picture' src={this.props.picture.img_url} alt="Camera" onClick = {(e) => this.handleClick(e)}/>
 				<div className='actions'>
 					<div className={`${isLike}`}></div>
@@ -87,4 +95,4 @@ class Picture extends Component {
 
 }
 
-export default Picture;
+export default PictureSingle;

@@ -78,7 +78,7 @@ logOut(e){
 
   return(
     <div className="login">
-       <h1>Create Account Page</h1>
+       <h1>Edit Account Page</h1>
         <form onSubmit={ (e) => this.handleFormSubmit(e) }>
           <label>
             Password

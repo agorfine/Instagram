@@ -71,21 +71,34 @@ export default class comments extends Component{
       } else return <p>Loading...</p>
     }
 
+  renderPic(){
+
+  }
+
   render(){
+    console.log(this.props.location.state.data)
     return(
       <div >
         <div className="commentsList">
           {this.renderComments()}
         </div>
         <div className="commentField">
-          <input
-          type="text"
+          <img className='commenterPic' src={this.props.location.state.data.profpic_url} alt="UserImg"/>
+          <div className='commentandpost'>
+            <input
+                className= 'commentBox'
+                type="text"
                 placeholder="Add a comment..."
                 name="comment"
                 value={this.state.comment}
                 onChange={(e) => this.handleInputChange(e)}
-          />
-          <input type="submit" value="Post" onClick={(e) => this.handleFormSubmit(e)} />
+            />
+            <input 
+                type="submit" value="Post" 
+                onClick={(e) => this.handleFormSubmit(e)} 
+                className='post'
+            />
+          </div>
         </div>
       </div>
     )

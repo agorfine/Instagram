@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class ProfilePage extends Component {
   state = {
     apiDataLoaded: false,
-    apiData: null
+    apiData: null,
   }
 
   componentDidMount() {
@@ -21,6 +21,16 @@ class ProfilePage extends Component {
       })
       this.targetElement = document.querySelector('.scroll')
       disableBodyScroll(this.targetElement)
+  }
+
+  handleClick(e) {
+    e.stopPropagation()
+    console.log('inside handleClick')
+
+    this.setState(prevState => ({
+      isGrid: !this.state.isGrid,
+      isSingle: !this.state.isSingle,
+    }))
   }
 
   renderPictures() {
@@ -67,6 +77,13 @@ class ProfilePage extends Component {
             <div className='name'>{this.renderUserName()}</div>
             <div className='bio'>{this.renderUserBio()}</div>
           </div>
+          <div className='viewBar'>
+            <div className='gridPic'></div>
+            <Link to={`/profilepagesingle/${username}`} 
+              onClick = {(e) => this.handleClick(e)}
+              className='singlePic'/>
+            <div className='tagPic'></div>
+          </div>  
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
       </div>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ProfilePicture from './ProfilePicture'
+import PictureSingle from './PictureSingle'
 import { disableBodyScroll } from 'body-scroll-lock';
 import { Link } from 'react-router-dom';
 
-class ProfilePageGrid extends Component {
+class ProfilePageSingle extends Component {
   state = {
     apiDataLoaded: false,
     apiData: null,
@@ -37,7 +37,7 @@ class ProfilePageGrid extends Component {
     if(this.state.apiDataLoaded) {
       return this.state.apiData.map(d => {
         return(
-          <ProfilePicture key={d.id} picture={d} />
+          <PictureSingle key={d.id} picture={d} />
         )
       })
     } else return <p>Loading...</p>
@@ -70,18 +70,18 @@ class ProfilePageGrid extends Component {
 			<div className="newsFeed">
         <div className="scroll">
           <div className='top'>  
-            <div className='profHead'>
-                <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
-                <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
-            </div>    
+              <div className='profHead'>
+                  <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
+                  <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
+              </div>    
             <div className='name'>{this.renderUserName()}</div>
             <div className='bio'>{this.renderUserBio()}</div>
           </div>
           <div className='viewBar'>
-            <div className='gridPic'></div>
             <Link to={`/profilepage/${username}`} 
               onClick = {(e) => this.handleClick(e)}
-              className='singlePic'/>
+              className='gridPicNotUsed'/>
+            <div className='singlePicinUse'></div>
             <div className='tagPic'></div>
           </div>  
           <div className='profilePicGrid'>{this.renderPictures()}</div>
@@ -92,4 +92,4 @@ class ProfilePageGrid extends Component {
 
 }
 
-export default ProfilePageGrid;
+export default ProfilePageSingle;
