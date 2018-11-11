@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ProfilePicture from './ProfilePicture'
+import PictureSingle from './PictureSingle'
 import { disableBodyScroll } from 'body-scroll-lock';
 import { Link } from 'react-router-dom';
 
-class ProfilePage extends Component {
+class ProfilePageSingle extends Component {
   state = {
     apiDataLoaded: false,
     apiData: null,
   }
 
-  componentDidMount() {
-      axios.get(`/${this.props.match.params.id}`)
-      .then( res => {
+	componentDidMount() {
+	    axios.get(`/${this.props.match.params.id}`)
+     	.then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
           apiData: res.data.data
@@ -37,7 +37,7 @@ class ProfilePage extends Component {
     if(this.state.apiDataLoaded) {
       return this.state.apiData.map(d => {
         return(
-          <ProfilePicture key={d.id} picture={d} />
+          <PictureSingle key={d.id} picture={d} />
         )
       })
     } else return <p>Loading...</p>
@@ -62,34 +62,34 @@ class ProfilePage extends Component {
       } else return <p>Loading...</p>
     }
 
-  render () {
+	render () {
 
   let username = localStorage.getItem('username')
 
-    return (
-      <div className="newsFeed">
+		return (
+			<div className="newsFeed">
         <div className="scroll">
           <div className='top'>  
-            <div className='profHead'>
-                <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
-                <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
-            </div>    
+              <div className='profHead'>
+                  <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
+                  <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
+              </div>    
             <div className='name'>{this.renderUserName()}</div>
             <div className='bio'>{this.renderUserBio()}</div>
           </div>
           <div className='viewBar'>
-            <div className='gridPic'></div>
-            <Link to={`/profilepagesingle/${username}`} 
+            <Link to={`/profilepage/${username}`} 
               onClick = {(e) => this.handleClick(e)}
-              className='singlePic'/>
+              className='gridPicNotUsed'/>
+            <div className='singlePicinUse'></div>
             <div className='tagPic'></div>
           </div>  
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
-      </div>
-    )
-  }
+			</div>
+		)
+	}
 
 }
 
-export default ProfilePage;
+export default ProfilePageSingle;

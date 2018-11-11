@@ -36,6 +36,7 @@ export default class WebCam extends Component {
 
 
   uploadHandler(e){
+    e.stopPropagation()
     const user_id = localStorage.getItem('user_id')
     const image = document.querySelector('.captureImage')
     const blob = image.src
@@ -43,7 +44,7 @@ export default class WebCam extends Component {
         user_id: user_id,
         img_file: blob
     })
-    window.location.replace('/newsfeed')
+    // window.location.replace('/newsfeed')
   }
 
 
@@ -60,13 +61,16 @@ export default class WebCam extends Component {
           }}
         >
         </Camera>
-
-          <div className ='captureContainer' onClick={() => this.takePicture()}>
-            <button className ='captureButton'> CAPTURE </button>
-        </div>
+        <div className='buttonsContainer'>
+            <div className ='captureContainer' onClick={() => this.takePicture()}>
+              <button className ='captureButton'> CAPTURE </button>
+            </div>
+            <div className ='uploadButton' onClick ={(e) => this.uploadHandler(e)}>
+              <button className ='captureButton'> UPLOAD </button>
+            </div>  
+         </div> 
          <img
           className ='captureImage'
-          onClick ={(e) => this.uploadHandler(e)}
           ref={(img) => {this.img = img;}}
         />
       </div>

@@ -69,7 +69,7 @@ export default class EditProfile extends Component {
 }
 logOut(e){
     localStorage.removeItem('username')
-    window.location.reload()
+    window.location.replace('/')
 }
 
 
@@ -78,7 +78,7 @@ logOut(e){
 
   return(
     <div className="login">
-       <h1>Create Account Page</h1>
+       <h1>Edit Account Page</h1>
         <form onSubmit={ (e) => this.handleFormSubmit(e) }>
           <label>
             Password
@@ -133,7 +133,7 @@ logOut(e){
           <input type="submit" value="Submit!" />
         </form>
         {this.state.fireRedirect
-          ? <Redirect push to={`/profilepage/${username}`}/>
+          ? <Redirect push to={`/`}/>
           : ''}
           <button onClick = {(e) => this.logOut(e)}> LOG OUT</button>
       </div>

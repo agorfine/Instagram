@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import NewsFeed from './NewsFeed';
+import ProfilePageSingle from './ProfilePageSingle';
 import ProfilePage from './ProfilePage';
 import AddPhoto from './AddPhoto';
 import Explore from './ExplorePage';
@@ -29,6 +30,7 @@ render(){
               <Route path='/WebCam' component= { WebCam } />
               <Route path='/Explore' component= { Explore } />
               <Route path='/ProfilePage/:id' component = { ProfilePage } />
+              <Route path='/ProfilePageSingle/:id' component = { ProfilePageSingle } />
               <Route path='/CommentsList' component = { CommentsList } />
               <Route path='/Likes' component = { LikesList } />
               <Route path='/Main' component={ NewsFeed } />

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'font medium';
+  src: url('../font/Metropolis-Medium.otf') format('opentype');
+}
+
 .picture {
   width: 100%;
   height: auto;
@@ -5,15 +10,19 @@
 
 .usernameCaption {
 	display: flex;
-  flex-direction: column;
+  	flex-direction: column;
 	margin-left: .8rem;
 	font-size: .9rem;
 	margin-bottom: 1rem;
 }
 
-.username {
-	margin-right: .5rem;
-	font-weight: bold;
+.this {
+	font-family: font medium;
+	font-weight: normal;
+}
+
+.photoCaption {
+	font-weight: normal;
 }
 
 .actions {
@@ -73,6 +82,7 @@
 	flex-direction: row;
 	flex-wrap: wrap
 }
+
 .userInformationNewsfeed {
 	display: flex;
 	height: 6vh;
@@ -83,37 +93,40 @@
 
 .userImg {
 	width: 9vw;
-  height: 5vh;
-  border-radius: 2rem;
-  margin-right: .7rem;
-  margin-left: .5rem;
+  	height: 5vh;
+	border-radius: 2rem;
+ 	margin-right: .7rem;
+	margin-left: .5rem;
 }
 
 .usernameTop {
 	margin-right: .5rem;
-  font-weight: bold;
-  font-size: 0.9rem;
+	font-family: font medium;
+	font-size: 0.9rem;
 }
 
 .likesCaptionContainer{
-  display: flex;
+	display:flex;
+	padding-top: .2rem;
+  	display: flex;
 }
 
-.commentsList{
-  height: 74vh;
-  overflow: scroll;
+
+.likes {
+	text-decoration: none;
+	color: black;
 }
 
-.commentContainer{
-  display: flex;
-  padding: 1rem;
+.headofpic {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.commentField{
-  height: 8vh;
-  display:flex;
-  justify-content: space-between;
-  padding: 0 4vw;
-  position: relative;
-  border-top: .5px solid gray;
+.delete {
+	background-image: url(https://res.cloudinary.com/drsaojfyp/image/upload/v1541950024/Screen_Shot_2018-11-11_at_10.26.49_AM.png);
+	background-size: contain;
+	width: 6vh;
+	height: 12vw;
+	margin-top: 1rem;
 }

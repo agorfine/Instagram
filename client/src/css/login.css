@@ -52,3 +52,16 @@
 	padding: .8rem 1.2rem;
 	font-size: .8rem;
 }
+
+.createAccount {
+	background-color: rgb(155,203,247);
+	color: white;
+	width: 83vw;
+	border: none;
+	border-radius: .5rem;
+	padding: .9rem 1.2rem;
+	font-size: .8rem;
+	margin-top: 1rem;
+	text-decoration: none;
+	text-align: center;
+}
