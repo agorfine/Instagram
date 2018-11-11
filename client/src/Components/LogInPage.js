@@ -94,7 +94,7 @@ export default class LogInPage extends Component {
         {this.state.fireRedirect
           ? <Redirect push to={'/Main'} />
           : ''}
-        <Link to='/CreateAccount'>Create User Account</Link>
+        <Link to='/CreateAccount' className='createAccount'>Create User Account</Link>
         {this.state.fireCreateAccount
           ?
           <div className= 'fullBackground'>
