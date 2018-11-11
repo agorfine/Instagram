@@ -76,14 +76,17 @@ export default class comments extends Component{
   }
 
   render(){
-    console.log(this.props.location.state.data)
+    const profpic_url = localStorage.getItem('profpic_url')
+    console.log('this is profpic: ', profpic_url)
+    // console.log('this is props.location: ',this.props.location.state.data)
+
     return(
       <div >
         <div className="commentsList">
           {this.renderComments()}
         </div>
         <div className="commentField">
-          <img className='commenterPic' src={this.props.location.state.data.profpic_url} alt="UserImg"/>
+          <img className='commenterPic' src={ profpic_url} alt="UserImg"/>
           <div className='commentandpost'>
             <input
                 className= 'commentBox'
@@ -93,9 +96,9 @@ export default class comments extends Component{
                 value={this.state.comment}
                 onChange={(e) => this.handleInputChange(e)}
             />
-            <input 
-                type="submit" value="Post" 
-                onClick={(e) => this.handleFormSubmit(e)} 
+            <input
+                type="submit" value="Post"
+                onClick={(e) => this.handleFormSubmit(e)}
                 className='post'
             />
           </div>

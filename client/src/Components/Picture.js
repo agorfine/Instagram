@@ -6,7 +6,7 @@ import axios from 'axios';
 class Picture extends Component {
 	state = {
 		isLike: false,
-    	likes:''
+    likes:[]
 	}
 
   componentDidMount(){
@@ -39,7 +39,7 @@ class Picture extends Component {
     .then((res) => {
       const data = res.data.data;
       this.setState({
-        likes: data.length,
+        likes: data,
       })
       console.log(res.data.data)
     })
@@ -64,19 +64,20 @@ class Picture extends Component {
 						pathname: '/commentslist',
 						state: { data }
 					}}
-						className='commentButton' 
+						className='commentButton'
 						onClick = {(e) => this.handleCommentClick(e)}
 					>
 					</Link>
 					<div className='messageButton'></div>
 				</div>
 				<div className='usernameCaption'>
-          			<Link to= {{
-          				path: '/likes',
-          				state: { data }
-          			}}
-          				className="likes" 
-          				>{this.state.likes} Likes</Link>
+    			<Link to={{
+    				path: '/likes',
+    				state: {data},
+    			}}
+    				className="likes"
+    				>{this.state.likes.length} Likes
+          </Link>
 					<div className="likesCaptionContainer">
   						<div><span className='this'>{this.props.picture.username}</span> {this.props.picture.caption}</div>
           			</div>

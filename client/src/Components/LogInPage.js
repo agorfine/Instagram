@@ -51,13 +51,14 @@ export default class LogInPage extends Component {
       if(res.data.data === 'good pass'){
         localStorage.setItem('username', res.data.user)
         localStorage.setItem('user_id', res.data.user_id)
+        localStorage.setItem('profpic_url', res.data.profpic_url)
       this.setState({
         fireRedirect:true,
       })} else {
        this.setState({
         fireCreateAccount:true,
       })
-      }console.log('this is user_id:',res.data)
+      }console.log('this is res.data: ',res.data)
     })
   }
 
