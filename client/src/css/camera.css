@@ -3,10 +3,16 @@
     justify-content: center;
   }
 
+  .buttonsContainer {
+    display: flex;
+    justify-content: center;
+  }
+
   .captureButton{
     position: relative;
     background-color: #fff;
     height: 56px;
+    width: 45vw;
 
   }
 
