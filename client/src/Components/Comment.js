@@ -7,10 +7,12 @@ export default class Comment extends Component{
     return(
 
       <div className="commentContainer">
-        <img className='userImg' src={this.props.comment.profpic_url} alt="UserImg"/>
+        <img className='userImgComments' src={this.props.comment.profpic_url} alt="UserImg"/>
         <div className="likesCaptionContainer">
-          <div className = "username">{this.props.comment.username}</div>
-          <div>{this.props.comment.comment}</div>
+          <div>
+            <span className = "usernameComment">{this.props.comment.username}</span>
+            {this.props.comment.comment}
+          </div>
         </div>
       </div>
     )
