@@ -1,7 +1,7 @@
 const db = require('../db/config');
 const Model = {};
 
-//explorer page
+//gets all  page
 Model.findAll = () => {
   return db.query(`
     SELECT pictures.id, pictures.user_id, pictures.img_url, pictures.caption, users.username, users.profpic_url

@@ -11,13 +11,13 @@ export default class LikesList extends Component{
 
   renderLikes() {
       console.log('this is state: ',this.state)
-      if(this.state.apiDataLoaded) {
-        return this.state.apiData.map(d => {
-          return(
-            <Likes key={d.id} like={d}/>
-          )
-        })
-      } else return <p>Loading...</p>
+      // if(this.state.apiDataLoaded) {
+      //   return this.state.apiData.map(d => {
+      //     return(
+      //       <Likes key={d.id} like={d}/>
+      //     )
+      //   })
+      // } else return <p>Loading...</p>
     }
 
   render(){
