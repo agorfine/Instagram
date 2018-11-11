@@ -25,7 +25,7 @@
 
 .profilePic {
 	width: 32.8vw;
-  	height: 16vh;
+  	height: 19vh;
   	border-right: .05rem white solid;
   	border-left: .05rem white solid;
 }
@@ -50,7 +50,6 @@
   padding-left: .8rem;
   font-size: .8rem;
   font-family: font medium;
-
 }
 
 .bio {
@@ -59,6 +58,31 @@
   font-size: .8rem
 }
 
+.viewBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gridPic {
+  background-image: url(https://res.cloudinary.com/drsaojfyp/image/upload/v1541900027/Screen_Shot_2018-11-10_at_8.25.28_PM.png);
+  background-size: contain;
+  width: 33%;
+  height: 7vh;
+}
+
+.singlePic {
+  background-image: url(https://res.cloudinary.com/drsaojfyp/image/upload/v1541900038/Screen_Shot_2018-11-10_at_8.25.35_PM.png);
+  background-size: contain;
+  width: 33%;
+  height: 7vh;
+}
+
+.tagPic {
+  background-image: url(https://res.cloudinary.com/drsaojfyp/image/upload/v1541900375/Screen_Shot_2018-11-10_at_8.39.20_PM.png);
+  background-size: contain;
+  width: 33%;
+  height: 7vh;
+}
 
 .profilePicGrid {
 	display: flex;

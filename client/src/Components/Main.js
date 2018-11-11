@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import NewsFeed from './NewsFeed';
+import ProfilePageGrid from './ProfilePageGrid';
 import ProfilePage from './ProfilePage';
 import AddPhoto from './AddPhoto';
 import Explore from './ExplorePage';

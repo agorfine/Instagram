@@ -6,7 +6,7 @@ import axios from 'axios';
 class Picture extends Component {
 	state = {
 		isLike: false,
-    likes:''
+    	likes:''
 	}
 
   componentDidMount(){
@@ -16,10 +16,10 @@ class Picture extends Component {
 	async handleClick(e) {
 		e.stopPropagation()
 		const user_id = localStorage.getItem('user_id')
-    console.log('inside handleClick')
-    axios.post('/like', {
-       picture_id: this.props.picture.id,
-       user_id: user_id,
+    	console.log('inside handleClick')
+    	axios.post('/like', {
+    	picture_id: this.props.picture.id,
+    	user_id: user_id,
     })
 		this.setState(prevState => ({
 			isLike: !prevState.isLike
@@ -63,11 +63,10 @@ class Picture extends Component {
 					<div className='messageButton'></div>
 				</div>
 				<div className='usernameCaption'>
-          <Link className="username" to={`/likes`}>{this.state.likes} Likes</Link>
+          			<Link className="likes" to={`/likes`}>{this.state.likes} Likes</Link>
 					<div className="likesCaptionContainer">
-            		<div className="username">{this.props.picture.username}</div>
-  					<div>{this.props.picture.caption}</div>
-          		</div>
+  						<div><span className='this'>{this.props.picture.username}</span> {this.props.picture.caption}</div>
+          			</div>
 				</div>
 			</div>
 		)

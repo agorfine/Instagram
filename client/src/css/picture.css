@@ -16,10 +16,9 @@
 	margin-bottom: 1rem;
 }
 
-.username {
-	margin-right: .5rem;
+.this {
 	font-family: font medium;
-	display: flex;
+	font-weight: normal;
 }
 
 .photoCaption {
@@ -129,4 +128,9 @@
   padding: 0 4vw;
   position: relative;
   border-top: .5px solid gray;
+}
+
+.likes {
+	text-decoration: none;
+	color: black;
 }
