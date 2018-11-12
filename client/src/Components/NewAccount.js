@@ -38,11 +38,14 @@ export default class NewAccount extends Component {
        profpic: this.state.profpic
     }).then(res => {
       localStorage.setItem('username', this.state.username)
-      console.log(this.state.username)
+      localStorage.setItem('profpic_url', this.state.profpic)
+      console.log(res.data.data.id)
       this.setState({
         newId: res.data.data.id,
         fireRedirect:true
       })
+      localStorage.setItem('user_id', res.data.data.id)
+
   })
 
 }

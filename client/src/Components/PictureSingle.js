@@ -17,8 +17,8 @@ class PictureSingle extends Component {
 		e.stopPropagation()
 		const user_id = localStorage.getItem('user_id')
     	console.log('inside handleClick')
-    	axios.post('/like', {
-    	picture_id: this.props.picture.id,
+    	axios.post('http://localhost:3001/finsta/like', {
+    	picture_id: this.props.picture.pic_id,
     	user_id: user_id,
     })
 		this.setState(prevState => ({
