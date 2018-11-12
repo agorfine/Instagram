@@ -15,8 +15,7 @@ class ProfilePicture extends Component {
 	}
 
 	render () {
-		const isLike = (this.state.isLike) ? 'liked' : 'noLike' 
-		console.log('hi')
+		// const isLike = (this.state.isLike) ? 'liked' : 'noLike'
 		return (
 
 			<div>

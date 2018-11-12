@@ -41,7 +41,7 @@ class Picture extends Component {
       this.setState({
         likes: data.length,
       })
-      console.log(res.data.data)
+      // console.log(res.data.data)
     })
       .catch(err => console.log(err));
       // console.log('this is state: ', this.state)
@@ -64,7 +64,7 @@ class Picture extends Component {
 						pathname: '/commentslist',
 						state: { data }
 					}}
-						className='commentButton' 
+						className='commentButton'
 						onClick = {(e) => this.handleCommentClick(e)}
 					>
 					</Link>
@@ -75,7 +75,7 @@ class Picture extends Component {
           				path: '/likes',
           				state: { data }
           			}}
-          				className="likes" 
+          				className="likes"
           				>{this.state.likes} Likes</Link>
 					<div className="likesCaptionContainer">
   						<div><span className='this'>{this.props.picture.username}</span> {this.props.picture.caption}</div>

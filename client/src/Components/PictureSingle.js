@@ -34,19 +34,21 @@ class PictureSingle extends Component {
     localStorage.setItem('picture_id', this.props.picture.id)
   }
 
-  handleClick(e) {
+  handleClickDelete(e) {
     e.stopPropagation()
-    console.log('inside deleteClick')
+    // console.log('inside deleteClick')
+    console.log('this.props.picture:', this.props.picture);
+    axios.delete(`/${this.props.picture.pic_id}`)
   }
 
   likesCounter() {
-    axios.get(`http://localhost:3001/finsta/like/${this.props.picture.id}`)
+    axios.get(`http://localhost:3001/finsta/like/${this.props.picture.pic_id}`)
     .then((res) => {
       const data = res.data.data;
       this.setState({
         likes: data.length,
       })
-      console.log(res.data.data)
+      // console.log(res.data.data)
     })
       .catch(err => console.log(err));
       // console.log('this is state: ', this.state)
@@ -63,8 +65,8 @@ class PictureSingle extends Component {
 						<img className='userImg' src={this.props.picture.profpic_url} alt="UserImg"/>
 						<div className="usernameTop">{this.props.picture.username}</div>
 					</div>
-					<div className='delete' onClick = {(e) => this.handleClick(e)}></div>
-				</div>	
+					<div className='delete' onClick = {(e) => this.handleClickDelete(e)}></div>
+				</div>
 				<img className='picture' src={this.props.picture.img_url} alt="Camera" onClick = {(e) => this.handleClick(e)}/>
 				<div className='actions'>
 					<div className={`${isLike}`}></div>
@@ -72,7 +74,7 @@ class PictureSingle extends Component {
 						pathname: '/commentslist',
 						state: { data }
 					}}
-						className='commentButton' 
+						className='commentButton'
 						onClick = {(e) => this.handleCommentClick(e)}
 					>
 					</Link>
@@ -83,7 +85,7 @@ class PictureSingle extends Component {
           				path: '/likes',
           				state: { data }
           			}}
-          				className="likes" 
+          				className="likes"
           				>{this.state.likes} Likes</Link>
 					<div className="likesCaptionContainer">
   						<div><span className='this'>{this.props.picture.username}</span> {this.props.picture.caption}</div>
