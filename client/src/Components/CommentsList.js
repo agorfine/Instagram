@@ -55,7 +55,6 @@ export default class comments extends Component{
       comment:''
     })
     this.commentRefresh()
-
     // .catch(err => console.log(err));
     // e.target.reset();
   }
@@ -93,9 +92,9 @@ export default class comments extends Component{
                 value={this.state.comment}
                 onChange={(e) => this.handleInputChange(e)}
             />
-            <input 
-                type="submit" value="Post" 
-                onClick={(e) => this.handleFormSubmit(e)} 
+            <input
+                type="submit" value="Post"
+                onClick={(e) => this.handleFormSubmit(e)}
                 className='post'
             />
           </div>

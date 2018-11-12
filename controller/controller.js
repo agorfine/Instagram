@@ -133,7 +133,7 @@ controller.createPic = (req, res) => {
   console.log(req.body)
   Model.postPic({
     user_id: req.body.user_id,
-    img_url: req.body.url,
+    img_url: req.body.img_url,
     img_file: req.body.img_file
   })
   .then(obj => {
@@ -177,7 +177,6 @@ controller.numberLikes = (req, res) => {
 
 controller.destroy = (req, res) => {
   Model.destroy(req.params.id)
-    Model.findById(req.params.id)
     .then(model => {
       res.json({
         message: 'Model deleted successfully!',
