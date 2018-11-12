@@ -29,7 +29,7 @@ export default class comments extends Component{
     axios.get(`/comments/${picture_id}`)
     .then((res) => {
       console.log('this is res: ', res.data.data);
-      // console.log('this is state: ', this.state)
+      console.log('this is state: ', this.state)
       const data = res.data.data;
       this.setState({
         apiData: data,
@@ -37,7 +37,7 @@ export default class comments extends Component{
       })
     })
       .catch(err => console.log(err));
-      // console.log('this is state: ', this.state)
+      console.log('this is state: ', this.state)
   }
 
 
@@ -61,7 +61,7 @@ export default class comments extends Component{
   }
 
   renderComments() {
-      console.log('this is state.apiData: ',this.state.apiData)
+      console.log('this is state: ',this.state)
       if(this.state.apiDataLoaded) {
         return this.state.apiData.map(d => {
           return(
@@ -76,17 +76,14 @@ export default class comments extends Component{
   }
 
   render(){
-    const profpic_url = localStorage.getItem('profpic_url')
-    // console.log('this is profpic: ', profpic_url)
-    console.log('this is props.location: ',this.props.location.state.data)
-
+    console.log(this.props.location.state.data)
     return(
       <div >
         <div className="commentsList">
           {this.renderComments()}
         </div>
         <div className="commentField">
-          <img className='commenterPic' src={ profpic_url} alt="UserImg"/>
+          <img className='commenterPic' src={this.props.location.state.data.profpic_url} alt="UserImg"/>
           <div className='commentandpost'>
             <input
                 className= 'commentBox'
@@ -96,9 +93,9 @@ export default class comments extends Component{
                 value={this.state.comment}
                 onChange={(e) => this.handleInputChange(e)}
             />
-            <input
-                type="submit" value="Post"
-                onClick={(e) => this.handleFormSubmit(e)}
+            <input 
+                type="submit" value="Post" 
+                onClick={(e) => this.handleFormSubmit(e)} 
                 className='post'
             />
           </div>

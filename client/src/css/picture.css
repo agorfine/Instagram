@@ -93,7 +93,7 @@
 
 .userImg {
 	width: 9vw;
-  height: 5vh;
+  	height: 5vh;
 	border-radius: 2rem;
  	margin-right: .7rem;
 	margin-left: .5rem;
@@ -115,23 +115,6 @@
 .likes {
 	text-decoration: none;
 	color: black;
-}
-
-.likesUserImg{
-  width: 8vh;
-  height: 8vh;
-  border-radius: 2rem;
-  margin-right: .7rem;
-  margin-left: .5rem;
-}
-
-.likesUserameFullNameContainer{
-  margin: auto 0;
-}
-
-.likesFullName{
-  color: rgba(209,209,209);
-
 }
 
 .headofpic {

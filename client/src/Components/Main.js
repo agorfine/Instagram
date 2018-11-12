@@ -12,26 +12,9 @@ import CommentsList from './CommentsList';
 import EditProfile from './EditProfile';
 import WebCam from './WebCam';
 import LikesList from './LikesList'
-import axios from 'axios';
 
 
 class Main extends Component {
-
-state={
-  apiDataLoaded: false,
-  apiData: [],
-}
-
-componentDidMount() {
-    axios.get('/newsfeed')
-    .then( res => {
-      this.setState(prevState => ({
-        apiDataLoaded: true,
-        apiData: res.data.data
-      }))
-      console.log('this is res.data.data:', res.data.data)
-    })
-  }
 
 render(){
 
@@ -42,7 +25,7 @@ render(){
           <div className="scroll">
             <Switch>
               <Route path='/EditProfile' component= { EditProfile } />
-              <Route path='/Newsfeed' render={(props)=> (<NewsFeed {...props} {...this.state.apiData} />) } />
+              <Route path='/Newsfeed' component= { NewsFeed } />
               <Route path='/AddPhoto' component= { AddPhoto } />
               <Route path='/WebCam' component= { WebCam } />
               <Route path='/Explore' component= { Explore } />
@@ -53,7 +36,7 @@ render(){
               <Route path='/Main' component={ NewsFeed } />
             </Switch>
           </div>
-          <Footer data={this.state.apiData}/>
+          <Footer />
         </div>
       </Router>
     )
