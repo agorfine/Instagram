@@ -35,6 +35,7 @@ class ProfilePage extends Component {
   }
 
   renderPictures() {
+    console.log(this.state.apiData)
     if(this.state.apiDataLoaded) {
       return this.state.apiData.map(d => {
         return(

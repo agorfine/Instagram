@@ -5,6 +5,7 @@ import './css/login.css'
 import './css/picture.css'
 import './css/profPage.css'
 import './css/comments.css'
+import './css/addphoto.css'
 
 import LogInPage from './components/LogInPage';
 import NewAccount from './components/NewAccount';

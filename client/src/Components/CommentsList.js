@@ -70,10 +70,6 @@ export default class comments extends Component{
       } else return <p>Loading...</p>
     }
 
-  renderPic(){
-
-  }
-
   render(){
     console.log(this.props.location.state.data)
     return(
