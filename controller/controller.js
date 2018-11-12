@@ -1,7 +1,6 @@
 const Model = require('../models/models');
 const controller = {};
 
-// pulls all pictures for newsfeed
 controller.index = (req, res) => {
   Model.findAll()
     .then(obj => {
@@ -23,10 +22,7 @@ controller.user = async (req, res) => {
         data = { data: 'no user' }
       }
       if (req.body.password === obj[0].password){
-        data = { data: 'good pass',
-                 user: obj[0].username,
-                 user_id:obj[0].id,
-                 profpic_url: obj[0].profpic_url }
+        data = { data: 'good pass', user: obj[0].username, user_id:obj[0].id }
       } else {
         data = { data: 'bad pass' }
       }
