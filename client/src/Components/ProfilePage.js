@@ -45,24 +45,24 @@ class ProfilePage extends Component {
   }
 
   renderUserImg() {
-    const profpic_url = localStorage.getItem('profpic_url')
-
-      return profpic_url
-
+    console.log(this.state.apiData)
+    if(this.state.apiDataLoaded) {
+      return this.state.apiData[0].profpic_url
+    } else return <p>Loading...</p>
   }
 
-  // renderUserName() {
-  //     if(this.state.apiDataLoaded) {
-  //       return this.state.apiData[0].full_name
-  //     } else return <p>Loading...</p>
-  //   }
+  renderUserName() {
+      if(this.state.apiDataLoaded) {
+        return this.state.apiData[0].full_name
+      } else return <p>Loading...</p>
+    }
 
-  // renderUserBio() {
-  //     if(this.state.apiDataLoaded) {
-  //       console.log(this.state.apiData[0].bio)
-  //       return this.state.apiData[0].bio
-  //     } else return <p>Loading...</p>
-  //   }
+  renderUserBio() {
+      if(this.state.apiDataLoaded) {
+        console.log(this.state.apiData[0].bio)
+        return this.state.apiData[0].bio
+      } else return <p>Loading...</p>
+    }
 
   render () {
 
@@ -76,8 +76,8 @@ class ProfilePage extends Component {
                 <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
                 <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
             </div>
-           {/* <div className='name'>{this.renderUserName()}</div>
-            <div className='bio'>{this.renderUserBio()}</div>*/}
+            <div className='name'>{this.renderUserName()}</div>
+            <div className='bio'>{this.renderUserBio()}</div>
           </div>
           <div className='viewBar'>
             <div className='gridPic'></div>
