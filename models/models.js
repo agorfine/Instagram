@@ -121,11 +121,11 @@ Model.postPic = pictures => {
   return db.one(
     `
     INSERT INTO pictures
-    (user_id, img_url, img_file)
-    VALUES ($1, $2, $3)
+    (user_id, img_url, img_file, caption)
+    VALUES ($1, $2, $3, $4)
     RETURNING *
   `,
-    [pictures.user_id, pictures.img_url, pictures.img_file]
+    [pictures.user_id, pictures.img_url, pictures.img_file, pictures.caption]
   );
 };
 
