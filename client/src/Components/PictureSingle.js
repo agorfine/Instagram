@@ -38,7 +38,7 @@ class PictureSingle extends Component {
     e.stopPropagation()
     // console.log('inside deleteClick')
     console.log('this.props.picture:', this.props.picture);
-    axios.delete(`/${this.props.picture.pic_id}`)
+    axios.delete(`http://localhost:3001/finsta/${this.props.picture.pic_id}`)
   }
 
   likesCounter() {
