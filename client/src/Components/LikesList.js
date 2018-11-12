@@ -4,20 +4,20 @@ import Likes from './Likes';
 export default class LikesList extends Component{
   state = {
       user_id:'',
-      comment:'',
+      picture_id:'',
       apiDataLoaded: true,
-      apiData: this.props.apiData,
+      apiData: this.props.location.state.likesData,
     }
 
   renderLikes() {
-      console.log('this is state: ',this.state)
-      // if(this.state.apiDataLoaded) {
-      //   return this.state.apiData.map(d => {
-      //     return(
-      //       <Likes key={d.id} like={d}/>
-      //     )
-      //   })
-      // } else return <p>Loading...</p>
+      console.log('this is props.location.state: ',this.state.apiData)
+      if(this.state.apiDataLoaded) {
+        return this.state.apiData.map(d => {
+          return(
+            <Likes key={d.id} like={d}/>
+          )
+        })
+      } else return <p>Loading...</p>
     }
 
   render(){

@@ -7,7 +7,7 @@ import { disableBodyScroll } from 'body-scroll-lock';
 class NewsFeed extends Component {
 	state = {
 	    apiDataLoaded: false,
-	    apiData: null,
+	    apiData: [],
 	  }
 
 	componentDidMount() {
@@ -17,15 +17,27 @@ class NewsFeed extends Component {
         apiDataLoaded: true,
         apiData: res.data.data
       }))
-      console.log(res.data.data)
+      console.log('this is res.data.data:', res.data.data)
     })
    	this.targetElement = document.querySelector('.scroll')
    	disableBodyScroll(this.targetElement)
 	}
 
+// trying to
+  // async componentDidMount() {
+  //   await console.log('this is this.props.loation.state:', this.props.location.state)
+  //     this.setState(prevState => ({
+  //       apiDataLoaded: true,
+  //       apiData: this.props.location.state
+  //     }))
+  //    this.targetElement = document.querySelector('.scroll')
+  //    disableBodyScroll(this.targetElement)
+  // }
+
 	renderPictures() {
+    console.log(this.props)
 		if(this.state.apiDataLoaded) {
-			return this.state.apiData.map(d => {
+			return this.props.data.map(d => {
 				return(
 					<Picture key ={d.id} picture={d}/>
 				)
@@ -33,12 +45,20 @@ class NewsFeed extends Component {
 		} else return <p>Loading...</p>
 	}
 
-	render(){
+  // renderPictures() {
+  //   console.log(this.state.apiData)
+  //     this.state.apiData.map(d => {
+  //       return(
+  //         <Picture key ={d.id} picture={d}/>
+  //       )
+  //     })
+  // }
 
+	render(){
 		return (
 			<div className="newsFeed">
 				<div className="scroll">
-					{this.renderPictures()}
+        {this.renderPictures()}
 				</div>
 			</div>
 		)

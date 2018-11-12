@@ -1,6 +1,7 @@
 const Model = require('../models/models');
 const controller = {};
 
+// pulls all pictures for newsfeed
 controller.index = (req, res) => {
   Model.findAll()
     .then(obj => {

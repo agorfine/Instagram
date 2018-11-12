@@ -29,7 +29,7 @@ export default class comments extends Component{
     axios.get(`/comments/${picture_id}`)
     .then((res) => {
       console.log('this is res: ', res.data.data);
-      console.log('this is state: ', this.state)
+      // console.log('this is state: ', this.state)
       const data = res.data.data;
       this.setState({
         apiData: data,
@@ -37,7 +37,7 @@ export default class comments extends Component{
       })
     })
       .catch(err => console.log(err));
-      console.log('this is state: ', this.state)
+      // console.log('this is state: ', this.state)
   }
 
 
@@ -61,7 +61,7 @@ export default class comments extends Component{
   }
 
   renderComments() {
-      console.log('this is state: ',this.state)
+      console.log('this is state.apiData: ',this.state.apiData)
       if(this.state.apiDataLoaded) {
         return this.state.apiData.map(d => {
           return(
@@ -77,8 +77,8 @@ export default class comments extends Component{
 
   render(){
     const profpic_url = localStorage.getItem('profpic_url')
-    console.log('this is profpic: ', profpic_url)
-    // console.log('this is props.location: ',this.props.location.state.data)
+    // console.log('this is profpic: ', profpic_url)
+    console.log('this is props.location: ',this.props.location.state.data)
 
     return(
       <div >

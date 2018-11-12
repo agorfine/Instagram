@@ -9,7 +9,6 @@ export default class LogInPage extends Component {
   state = {
     username: '',
     password:'',
-    availableUser: [],
     fireRedirect:false,
     fireCreateAccount: false
   }
