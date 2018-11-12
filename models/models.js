@@ -1,10 +1,10 @@
 const db = require('../db/config');
 const Model = {};
 
-//explorer page
+//gets all pictures for newfeed
 Model.findAll = () => {
   return db.query(`
-    SELECT pictures.id, pictures.user_id, pictures.img_url, pictures.caption, users.username, users.profpic_url
+    SELECT pictures.id AS picture_id, pictures.user_id, pictures.img_url, pictures.caption, users.username, users.profpic_url
     FROM pictures
     JOIN users
     ON pictures.user_id = users.id
@@ -12,7 +12,7 @@ Model.findAll = () => {
   `)
 }
 
-//newsfeed after login
+//used for user authentication
 Model.findUser = (username) => {
   return db.query(`
     SELECT *
@@ -94,7 +94,7 @@ Model.update = (users, id) => {
 Model.findComments = (picture_id) => {
   return db.query(
     `
-    SELECT comments.id, comments.picture_id, comments.comment, comments.user_id, users.username, users.profpic_url
+    SELECT comments.id AS comment_id, comments.picture_id, comments.comment, comments.user_id, users.username, users.profpic_url
     FROM comments
     JOIN users
     ON comments.user_id = users.id
@@ -146,7 +146,7 @@ Model.like = like => {
 Model.numberLikes = (picture_id) => {
   return db.query(
     `
-    SELECT likes.id, likes.picture_id, likes.user_id, users.username, users.full_name
+    SELECT likes.id AS likes_id, likes.picture_id, likes.user_id, users.username, users.full_name, users.profpic_url
     FROM likes
     JOIN users
     ON likes.user_id = users.id

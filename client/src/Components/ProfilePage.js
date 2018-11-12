@@ -7,17 +7,18 @@ import { Link } from 'react-router-dom';
 class ProfilePage extends Component {
   state = {
     apiDataLoaded: false,
-    apiData: null,
+    apiData: [],
   }
 
   componentDidMount() {
-      axios.get(`/${this.props.match.params.id}`)
+     const username = localStorage.getItem('username')
+      axios.get(`http://localhost:3001/finsta/${username}`)
       .then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
           apiData: res.data.data
         }))
-        console.log(res.data.data)
+        console.log('this is res.data.data: ',res.data.data)
       })
       this.targetElement = document.querySelector('.scroll')
       disableBodyScroll(this.targetElement)
@@ -44,12 +45,14 @@ class ProfilePage extends Component {
   }
 
   renderUserImg() {
+    console.log(this.state.apiData)
     if(this.state.apiDataLoaded) {
       return this.state.apiData[0].profpic_url
     } else return <p>Loading...</p>
   }
 
   renderUserName() {
+
       if(this.state.apiDataLoaded) {
         return this.state.apiData[0].full_name
       } else return <p>Loading...</p>
@@ -64,26 +67,27 @@ class ProfilePage extends Component {
 
   render () {
 
-  let username = localStorage.getItem('username')
+  const username = localStorage.getItem('username')
+  const profpic_url = localStorage.getItem('profpic_url')
 
     return (
       <div className="newsFeed">
         <div className="scroll">
-          <div className='top'>  
+          <div className='top'>
             <div className='profHead'>
-                <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
+                <img className='userImgProfPage' src={profpic_url} alt="UserImg"/>
                 <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
-            </div>    
+            </div>
             <div className='name'>{this.renderUserName()}</div>
             <div className='bio'>{this.renderUserBio()}</div>
           </div>
           <div className='viewBar'>
             <div className='gridPic'></div>
-            <Link to={`/profilepagesingle/${username}`} 
+            <Link to={`/profilepagesingle/${username}`}
               onClick = {(e) => this.handleClick(e)}
               className='singlePic'/>
             <div className='tagPic'></div>
-          </div>  
+          </div>
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
       </div>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import PictureSingle from './PictureSingle'
 import { disableBodyScroll } from 'body-scroll-lock';
 import { Link } from 'react-router-dom';
+import Picture from './Picture'
 
 class ProfilePageSingle extends Component {
   state = {
@@ -11,7 +12,9 @@ class ProfilePageSingle extends Component {
   }
 
 	componentDidMount() {
-	    axios.get(`/${this.props.match.params.id}`)
+      const username = localStorage.getItem('username')
+
+	    axios.get(`/${ username }`)
      	.then( res => {
         this.setState(prevState => ({
           apiDataLoaded: true,
@@ -37,7 +40,7 @@ class ProfilePageSingle extends Component {
     if(this.state.apiDataLoaded) {
       return this.state.apiData.map(d => {
         return(
-          <PictureSingle key={d.id} picture={d} />
+          <Picture key={d.id} picture={d} />
         )
       })
     } else return <p>Loading...</p>
@@ -69,21 +72,21 @@ class ProfilePageSingle extends Component {
 		return (
 			<div className="newsFeed">
         <div className="scroll">
-          <div className='top'>  
+          <div className='top'>
               <div className='profHead'>
                   <img className='userImgProfPage' src={this.renderUserImg()} alt="UserImg"/>
                   <Link to = {`/editprofile/${username}`} className='edit'><div className='editThis'> Edit Profile </div></Link>
-              </div>    
+              </div>
             <div className='name'>{this.renderUserName()}</div>
             <div className='bio'>{this.renderUserBio()}</div>
           </div>
           <div className='viewBar'>
-            <Link to={`/profilepage/${username}`} 
+            <Link to={`/profilepage/${username}`}
               onClick = {(e) => this.handleClick(e)}
               className='gridPicNotUsed'/>
             <div className='singlePicinUse'></div>
             <div className='tagPic'></div>
-          </div>  
+          </div>
           <div className='profilePicGrid'>{this.renderPictures()}</div>
          </div>
 			</div>
