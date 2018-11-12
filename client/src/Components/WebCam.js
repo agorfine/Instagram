@@ -40,9 +40,10 @@ export default class WebCam extends Component {
     const user_id = localStorage.getItem('user_id')
     const image = document.querySelector('.captureImage')
     const blob = image.src
+    console.log(blob)
       axios.post('/pictures', {
         user_id: user_id,
-        img_file: blob
+        img_url: blob
     })
     // window.location.replace('/newsfeed')
   }
@@ -67,8 +68,8 @@ export default class WebCam extends Component {
             </div>
             <div className ='uploadButton' onClick ={(e) => this.uploadHandler(e)}>
               <button className ='captureButton'> UPLOAD </button>
-            </div>  
-         </div> 
+            </div>
+         </div>
          <img
           className ='captureImage'
           ref={(img) => {this.img = img;}}
