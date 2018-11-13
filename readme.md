@@ -13,10 +13,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |:---:|---|---|:---:|
 |Day 1| Nov 5 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | Complete
 |Day 2| Nov 6 | Basic Functionality: Database, Login to newsfeed, Nav, Footer | Complete
-|Day 3| Nov 7 | Newfeed functionality: Render photos, Add photos, Comment, Like | In Progress
-|Day 4| Nov 8 | Explore Page, Profile Page | In progress
-|Day 5| Nov 9 | CSS, Problem Sovling, Possibly Post-MVP  | Incomplete
-|Day 6| Nov 12 | Final Touches, Presentation Prep | Incomplete
+|Day 3| Nov 7 | Newfeed functionality: Render photos, Add photos, Comment, Like | Complete
+|Day 4| Nov 8 | Newsfeed Page, Profile Page | Complete
+|Day 5| Nov 9 | CSS, Problem Sovling, Possibly Post-MVP  | Complete
+|Day 6| Nov 12 | Final Touches, Presentation Prep | Complete
 |Day 7| Nov 13 | Present | Incomplete
 
 
@@ -24,7 +24,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
 
-Finsta is a cover of Instagram.
+Four our third project, we decided to recreate Instagram. Our goal was to recreate the basic functions of the app using React, Express, and PSQL. With our Finstagram ("Fake Instagram") app, you can create an account, upload photographs, view photographs, edit your account information, and delete photographs. The design of the app is as similar to Instagram as possible. We approached the project with mobile first methodology.
 
 https://instagram.com/
 
@@ -32,7 +32,7 @@ https://instagram.com/
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-[Wireframe picture](https://imgur.com/U6npG6W "Wireframe")
+[Wireframe Drawn](https://imgur.com/U6npG6W "Wireframe")
 
 [Wireframe made in Sketch](https://imgur.com/bdl9r7e "Wireframe")
 
@@ -52,11 +52,11 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Create user account
 - Login to user account
-- Newsfeed
+- Newsfeed (view photos from database)
 - Photo likes counter
 - Profile page
 - Post photo
-- Edit caption
+- Edit profile information
 - Comment on photos
 
 
@@ -75,7 +75,11 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Define the the React components and the architectural design of your app.
 
-[React Architectural Design](https://res.cloudinary.com/dvjtpejbw/image/upload/v1541690969/IMG_2973.jpg)
+[Initial React Architectural Design Written](https://res.cloudinary.com/drsaojfyp/image/upload/v1542120525/znJfojK.jpg)
+
+[Redesigned React Architectural Design Written](https://res.cloudinary.com/dvjtpejbw/image/upload/v1541690969/IMG_2973.jpg)
+
+[Redesigned React Architectural Design Lucidchart](https://res.cloudinary.com/drsaojfyp/image/upload/v1542117841/Projects_for_Portfolio.jpg)
 
 [ERD](https://imgur.com/a/fLTtbNE)
 
@@ -86,13 +90,24 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Description | 
 | --- | --- |  
 | App | This will render the UI | 
-| Switcher | will handle all the routes | 
-| Log-in Page | log in for existing users | 
-| Create Account | create new user account |
-| Newsfeed | scrolling list of photos | 
-| Nav | includes two icons | 
-| Footer | add photo button, profile button, newsfeed button | 
-| Add photo form | Add a photo and give it a caption | 
+| Switcher | will handle the initial routes to the login, create account, and main page| 
+| LoginPage | allows users to login to their account and then redirect to the newsfeed | 
+| Create Account | if a user is not in the database, they can create a new account and then redirect to the newsfeed |
+| Main | includes navbar and footer as well as a switch to all of the routes (newsfeed, profilepage, upload photos, camera, etc) | 
+| NavBar | routes to the webcam component | 
+| Footer | the footer is actually our main nav bar that includes links to the other components | 
+| Newsfeed | scrolling list of photos saved in database | 
+| Picture | shows picture with user img, caption, likes, and comments |
+| AddPhoto | Add a photo with a url and give it a caption | 
+| ProfilePage | Allows users to view their images and edit their profile- opens to pictures in a grid | 
+| ProfilePageSingle | Allows users to view their images and edit their profile- allows users to view photos in newsfeed style instead of grid |
+| PictureSingle | picture component for profile page single including delete photo button |
+| Comments | create comments |
+| CommentsLists | shows comments for each individual picture |
+| WebCam | allows user to take picture with built in camera |
+| Likes | displays likes counter |
+| LikesList | Logic for linking clicks to like counter |
+
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
@@ -103,20 +118,22 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Switcher | H | 3hrs| 1hrs | 1hrs |
 | Create User Account | H | 7hrs | 3hrs | 3hrs |
 | Login Page/ Authentication | H | 5hrs | 6hrs | 6hrs |
-| Database | H | 5hrs| 3hrs | 3hrs |
-| Linking Components to DB | H | 10hrs| 6hrs | 6hrs |
-| Newsfeed | H | 4hrs | 5hrs | hrs |
-| Navigation | H | 2hrs | 1hrs | hrs |
-| Footer | H | 2hrs | 8hrs | hrs |
-| Add Photo | H | 3hrs | 2hrs | hrs |
-| Profile Page | L | 5hrs | 2.5hrs | hrs |
-| Messages | L | 10hrs | 0hrs | hrs |
-| Comments | L | 6hrs | 0hrs | hrs |
-| Git Project Workflow | H | 3hrs | 2.5hrs | hrs |
-| Wireframing| H | 5hrs | 5hrs | hrs |
-| CSS| H | ∞hrs | 5hrs | hrs |
-| Project Management| H | 2hrs | 2hrs | hrs |
-| Total | H | 68hrs| 52.5hrs | hrs |
+| Database | H | 5hrs| 3hrs | 5hrs |
+| Linking Components to DB | H | 10hrs| 6hrs | 8hrs |
+| Newsfeed | H | 4hrs | 5hrs | 5hrs |
+| Navigation | H | 2hrs | 1hrs | 1hrs |
+| Footer | H | 2hrs | 8hrs | 6hrs |
+| Add Photo Camera | H | 3hrs | 2hrs | 5hrs |
+| Add Photo URL | H | 3hrs | 2hrs | 3hrs |
+| Profile Page | L | 5hrs | 2.5hrs | 6hrs |
+| Messages | L | 10hrs | 0hrs | 0hrs |
+| Comments | L | 6hrs | 0hrs | 4hrs |
+| Git Project Workflow | H | 3hrs | 2.5hrs | 3hrs |
+| Wireframing| H | 5hrs | 5hrs | 5hrs |
+| CSS| H | ∞hrs | 5hrs | 12hrs |
+| Project Management| H | 2hrs | 2hrs | 3hrs |
+| Deployment| H | 4hrs | 2hrs | 8hrs |
+| Total | H | 68hrs| 52.5hrs | 86hrs |
 
 
 ## Helper Functions
@@ -125,7 +142,9 @@ Helper functions should be generic enought that they can be reused in other appl
 | Function | Description | 
 | --- | --- |  
 | compondentDidMount | Pulling data when page renders | 
-| Capitalize | This will capitalize the first letter in a string of text | 
+| handleClick | Changes state when called with an onclick|
+| handleInputChange | Changes state when user is typing in an input field| 
+| handleFormSubmit | uses axios post to submit form information to database | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -139,13 +158,137 @@ Helper functions should be generic enought that they can be reused in other appl
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+export default class NewAccount extends Component {
+  state = {
+    newId: '',
+    username: '',
+    password:'',
+    full_name: '',
+    phone: '',
+    bio: '',
+    profpic: '',
+    fireRedirect: false
+  }
+
+
+  handleInputChange(e){
+    const name = e.target.name
+    const value = e.target.value
+    this.setState(prevState => ({
+       [name]: value
+    }))
+  }
+
+
+  // the event for a form is...onSubmit
+  handleFormSubmit(e){
+    e.preventDefault()
+
+    axios.post('/', {
+       username: this.state.username,
+       password: this.state.password,
+       full_name: this.state.full_name,
+       phone: this.state.phone,
+       bio: this.state.bio,
+       profpic: this.state.profpic
+    }).then(res => {
+      localStorage.setItem('username', this.state.username)
+      localStorage.setItem('profpic_url', this.state.profpic)
+      console.log(res.data.data.id)
+      this.setState({
+        newId: res.data.data.id,
+        fireRedirect:true
+      })
+      localStorage.setItem('user_id', res.data.data.id)
+
+  })
+
+}
+
+
+  render() {
+  return(
+    <div className="login">
+       <h1>Create Account Page</h1>
+        <form onSubmit={(e) => this.handleFormSubmit(e)}>
+          <label>
+            Username
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={this.state.username}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={this.state.password}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Full Name
+            <input
+              type="text"
+              placeholder="Full Name"
+              name="full_name"
+              value={this.state.full_name}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Phone
+            <input
+              type="text"
+              placeholder="Phone"
+              name="phone"
+              value={this.state.phone}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Bio
+            <input
+              type="text"
+              placeholder="Bio"
+              name="bio"
+              value={this.state.bio}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <label>
+            Profile Picture URL
+            <input
+              type="text"
+              placeholder="Profile Pic URL"
+              name="profpic"
+              value={this.state.profpic}
+              onChange={(e) => this.handleInputChange(e)}
+            />
+          </label>
+          <input type="submit" value="Submit!" />
+        </form>
+        {this.state.fireRedirect
+          ? <Redirect push to={{
+              pathname: '/main',
+              state: {referrer: this.state.username}
+            }} />
+          : ''}
+      </div>
+    )
+  }
 }
 ```
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
+ 
+ We made a few changes once we started our project. The biggest change was restructuring our React components. Initially, we made the mistake of attempting to call the nav component and the footer component on each url route instead of making a main page with a switch. We restructured our app to have three switch components "homes". 
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
