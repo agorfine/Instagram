@@ -1,34 +1,43 @@
 {
-  "name": "project3-instagram",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "js-tic-tac-toe-lab",
+  "version": "1.5.0",
+  "description": "Build a tic tac toe game in HTML and JavaScript.",
+  "main": "script.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.generalassemb.ly/cynthia/Project3-Instagram.git"
+    "url": "git+https://github.com/ga-wdi-exercises/tic_tac_toe.git"
   },
-  "author": "",
+  "keywords": [
+    "javascript",
+    "oop",
+    "css",
+    "ttt",
+    "tic tac toe",
+    "game"
+  ],
+  "author": "Micah Rich",
+  "contributors": [
+    "Jason Seminara <js@ga.co>"
+  ],
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ga-wdi-exercises/tic_tac_toe/issues"
+  },
+  "ga_co": {
+    "duration": "8",
+    "type": "lab",
+  },
+  "homepage": "https://github.com/ga-wdi-exercises/tic_tac_toe#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cor": "0.0.0",
-    "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "image-downloader": "^3.4.1",
-    "morgan": "^1.9.1",
-    "pg-promise": "^8.5.1",
-    "react-camera": "^0.1.3",
-    "react-images-upload": "^1.2.3",
-    "save-image": "0.0.3"
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1",
-    "nodemon": "^1.18.6"
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
   }
 }
